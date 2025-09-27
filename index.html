@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Hugo Rodrigues</title>
+    <meta
+      name="description"
+      content="Portfolio de Hugo Rodrigues, étudiant ingénieur à CPE Lyon et apprenti développeur logiciel chez Orange."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="assets/images/HugoGrandeTailleLogo.png" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="container">
+        <a class="site-logo" href="#hero">
+          <img src="assets/images/HugoGrandeTailleLogo.png" alt="Logo Hugo Rodrigues" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" data-nav-toggle>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="#about">À propos</a></li>
+            <li><a class="site-nav__link" href="#skills">Compétences</a></li>
+            <li><a class="site-nav__link" href="#projects">Projets</a></li>
+            <li><a class="site-nav__link" href="#experience">Expériences</a></li>
+            <li><a class="site-nav__link" href="#education">Formations</a></li>
+            <li><a class="site-nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero__content">
+          <div class="hero__intro">
+            <p class="hero__eyebrow">Apprenti développeur logiciel chez Orange</p>
+            <h1 class="hero__title">Étudiant ingénieur à CPE Lyon</h1>
+            <p class="hero__subtitle">
+              Passionné par les technologies émergentes, notamment l'intelligence artificielle, la
+              robotique et le développement web, je consolide mes bases en ingénierie logicielle tout en
+              préparant un stage international de 2 à 3 mois pour l'été 2026.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#projects">Découvrir mes projets</a>
+              <a class="btn btn--ghost" href="#contact">Discuter d'une opportunité</a>
+            </div>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__shape"></div>
+            <div class="hero__avatar">Hugo</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container section__grid">
+          <div>
+            <p class="section__eyebrow">À propos</p>
+            <h2 class="section__title">Ingénieur logiciel passionné par l'Informatique et les nouvelles technologies</h2>
+          </div>
+          <div class="section__content">
+            <p>
+              Etudiant ingénieur en Informatique & Réseaux de Communication à
+              CPE Lyon et apprenti développeur logiciel chez Orange. J'oriente mes travaux vers
+              l'intelligence artificielle, la robotique et le développement web.
+            </p>
+            <p>
+              Curieux de nature, j'explore la data science et les nouvelles tendances technologiques,
+              mais je me ressource surtout à travers le sport collectif : handballeur depuis quinze ans,
+              j'ai aussi eu la chance de coacher de jeunes équipes et d'arbitrer des rencontres
+              officielles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="skills">
+        <div class="container">
+          <p class="section__eyebrow">Compétences</p>
+          <h2 class="section__title">Mes connaissances techniques</h2>
+          <div class="skills">
+            <article class="skills__group">
+              <h3 class="skills__title">Langages & web</h3>
+              <ul class="skills__list">
+                <li>Java</li>
+                <li>Python</li>
+                <li>C#</li>
+                <li>C</li>
+                <li>JavaScript, HTML/CSS, Razor</li>
+              </ul>
+            </article>
+            <article class="skills__group">
+              <h3 class="skills__title">Bases de données</h3>
+              <ul class="skills__list">
+                <li>SQL, PostgreSQL, MongoDB</li>
+                <li>MySQL</li>
+                <li>SQL Developer, Access</li>
+              </ul>
+            </article>
+            <article class="skills__group">
+              <h3 class="skills__title">IA, modélisation & méthodes</h3>
+              <ul class="skills__list">
+                <li>Architecture logicielle, DevOps, Systèmes embarqués & IoT</li>
+                <li>Gestion de projet, Économie, Droit</li>
+                <li>UML, MLD, MVP, normalisation, algèbre relationnelle</li>
+                <!--<li>Machine learning basics, classification, model evaluation</li>-->
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section__header">
+            <div>
+              <p class="section__eyebrow">Projets</p>
+              <h2 class="section__title">Sélection de réalisations</h2>
+            </div>
+            <a
+              class="section__cta"
+              href="https://github.com/Hugo-Rodrigues-Dev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Voir tous les projets
+            </a>
+          </div>
+          <div class="projects">
+            <article class="project-card">
+              <div class="project-card__meta">
+                <h3 class="project-card__title">Job Application Tracking Spreadsheet</h3>
+                <p class="project-card__description">
+                  Application pour suivre mes candidatures, organiser les contacts, les
+                  relances et les échéances.
+                </p>
+                <ul class="tag-list">
+                  <li>React 19</li>
+                  <li>Tailwind CSS</li>
+                  <li>Vite</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a
+                  class="btn btn--ghost"
+                  href="https://github.com/Hugo-Rodrigues-Dev/job-application-tracking-spreadsheet"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__meta">
+                <h3 class="project-card__title">Python Learning Repository</h3>
+                <p class="project-card__description">
+                  Dépôt personnel où je documente mon parcours sur les fondamentaux Python, les
+                  structures de données, les algorithmes et la programmation orientée objet, avec des
+                  exemples progressifs.
+                </p>
+                <ul class="tag-list">
+                  <li>Python</li>
+                  <li>Algorithmes</li>
+                  <li>Structures de données</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a
+                  class="btn btn--ghost"
+                  href="https://github.com/Hugo-Rodrigues-Dev/python-learning"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__meta">
+                <h3 class="project-card__title">IoT Android App</h3>
+                <p class="project-card__description">
+                  Application Android réalisée à CPE Lyon pour afficher en temps réel des données de
+                  capteurs via UDP, choisir un serveur distant et visualiser graphiquement les mesures
+                  depuis l'application mobile.
+                </p>
+                <ul class="tag-list">
+                  <li>Java</li>
+                  <li>Android</li>
+                  <li>UDP sockets</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a
+                  class="btn btn--ghost"
+                  href="https://github.com/Hugo-Rodrigues-Dev/iot-android-app"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="experience">
+        <div class="container section__grid">
+          <div>
+            <p class="section__eyebrow">Expériences</p>
+            <h2 class="section__title">Parcours professionnel</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Apprenti développeur logiciel</h3>
+                <p class="timeline__meta">Orange · Lyon · 2024 — 2027</p>
+              </header>
+              <p class="timeline__description">
+                Conception et développement d'une nouvelle API REST, intégration de services partenaires,
+                automatisation de l'enrichissement et de la gestion des erreurs, rédaction de tests unitaires
+                et d'intégration (JUnit, Mockito, Castle Mock) et application des bonnes pratiques Agile.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Junior Developer Apprentice</h3>
+                <p class="timeline__meta">Kardham Digital · Dijon · 2023 — 2024</p>
+              </header>
+              <p class="timeline__description">
+                Ajout de nouvelles fonctionnalités à des applications smart building existantes,
+                résolution d'anomalies et maintenance applicative, conception de dashboards métier avec
+                Blazor et les APIs Treedis pour les équipes de facility management.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">IT Technician (Intérim)</h3>
+                <p class="timeline__meta">La Pierrette S.A. · Suisse · juil. 2023 — août 2023</p>
+              </header>
+              <p class="timeline__description">
+                Mission estivale au sein du service informatique : installation et mise en service du
+                matériel, préparation des postes utilisateurs et déploiement des mises à jour logicielles.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Software Application Developer (Stage)</h3>
+                <p class="timeline__meta">La Pierrette S.A. · Suisse · mai 2023 — juin 2023</p>
+              </header>
+              <p class="timeline__description">
+                Conception d'une application de gestion de contacts internes, prête pour le déploiement,
+                construite en C# / WPF avec une base de données SQL.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">IT Technician (Intérim)</h3>
+                <p class="timeline__meta">La Pierrette S.A. · Suisse · juil. 2022 — août 2022</p>
+              </header>
+              <p class="timeline__description">
+                Support technique et préparation de postes : rédaction de procédures d'installation,
+                configuration de Windows, déploiement et remise en service des équipements auprès des
+                utilisateurs finaux.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container section__grid">
+          <div>
+            <p class="section__eyebrow">Formations</p>
+            <h2 class="section__title">Parcours académique</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Cycle Ingénieur Informatique & Réseaux</h3>
+                <p class="timeline__meta">CPE Lyon · 2024 — 2027</p>
+              </header>
+              <p class="timeline__description">
+                Programme en alternance couvrant intelligence artificielle, mathématiques avancées,
+                développement front et back-end, DevOps, ingénierie logicielle, systèmes et cybersécurité.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">BUT Informatique · Parcours Développement</h3>
+                <p class="timeline__meta">IUT de Dijon · 2021 — 2024</p>
+              </header>
+              <p class="timeline__description">
+                Bases solides en développement logiciel, modélisation de bases de données, gestion de
+                projet, cybersécurité, troisième année en alternance.
+              </p>
+            </article>
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Baccalauréat Technologique STI2D · option SIN</h3>
+                <p class="timeline__meta">Lycée Victor Bérard · 2018 — 2021</p>
+              </header>
+              <p class="timeline__description">
+                Spécialisation en systèmes d'information numériques, 
+                électronique et premières applications logicielles orientées systèmes embarqués.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container section__grid">
+          <div>
+            <p class="section__eyebrow">Contact</p>
+            <h2 class="section__title">N'hésitez pas à me contacter !</h2>
+          </div>
+          <div class="contact">
+            <img
+              class="contact__avatar"
+              src="assets/images/Avatar.png"
+              alt="Avatar de Hugo Rodrigues"
+            />
+            <p class="contact__intro">Retrouvez-moi ici :</p>
+            <ul class="contact__links">
+              <li>
+                <a
+                  class="contact__link"
+                  href="www.linkedin.com/in/hugo-rdg"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Profil LinkedIn"
+                >
+                  <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h3.96v12H3V9Zm7.2 0h3.8v1.71h.06c.53-.95 1.84-1.95 3.78-1.95 4.05 0 4.8 2.58 4.8 5.94V21H18v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.07 1.4-2.07 2.84V21h-3.94V9Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="contact__link"
+                  href="https://github.com/Hugo-Rodrigues-Dev"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Profil GitHub"
+                >
+                  <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.52.1.7-.22.7-.49v-1.7c-2.86.62-3.46-1.38-3.46-1.38-.47-1.2-1.15-1.52-1.15-1.52-.94-.64.07-.62.07-.62 1.05.07 1.6 1.1 1.6 1.1.92 1.57 2.4 1.12 2.99.86.09-.67.36-1.12.65-1.38-2.28-.26-4.68-1.14-4.68-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .86-.28 2.82 1.05a9.7 9.7 0 0 1 5.14 0c1.96-1.33 2.82-1.05 2.82-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.4 4.8-4.69 5.06.37.32.7.94.7 1.9v2.82c0 .27.18.6.7.5A10.5 10.5 0 0 0 12 1.5Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="contact__link" href="mailto:rodrigueshugo39@gmail.com" aria-label="Envoyer un e-mail">
+                  <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3.75 5.25h16.5a1.5 1.5 0 0 1 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5Zm8.25 6.67 7.5-4.92H4.5l7.5 4.92Zm0 1.26L4.5 8.25v9h15v-9l-7.5 4.93Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__content">
+        <p>© <span data-current-year></span> Hugo Rodrigues. Tous droits réservés.</p>
+        <a class="site-footer__top" href="#hero">Retour en haut</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
