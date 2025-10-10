@@ -90,6 +90,14 @@ h4 {
   color: var(--color-text);
 }
 
+.section__content p,
+.hero__subtitle,
+.project-card__description,
+.timeline__description,
+.site-footer p {
+  text-align: justify;
+}
+
 .container {
   width: min(1120px, 92vw);
   margin: 0 auto;
@@ -361,6 +369,48 @@ h4 {
 
 .section__content {
   max-width: 640px;
+}
+
+#about .section__grid {
+  grid-template-columns: minmax(280px, 0.85fr) minmax(360px, 1.15fr);
+  gap: clamp(2.4rem, 6vw, 5rem);
+  align-items: center;
+}
+
+#about .section__grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#about .section__title {
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  line-height: 1.15;
+  max-width: 18ch;
+}
+
+#about .section__content {
+  max-width: none;
+  font-size: 1.05rem;
+}
+
+#about .section__content p {
+  max-width: 60ch;
+}
+
+@media (max-width: 720px) {
+  #about .section__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #about .section__title {
+    max-width: none;
+  }
+
+  #about .section__content p {
+    max-width: none;
+  }
 }
 
 .section__header {
@@ -774,7 +824,7 @@ h4 {
 .contact {
   position: relative;
   display: grid;
-  justify-items: start;
+  justify-items: center;
   gap: 1.5rem;
   padding: 3rem;
   border-radius: var(--radius-lg);
@@ -805,6 +855,7 @@ h4 {
 .contact__intro {
   font-weight: 600;
   color: var(--color-text);
+  text-align: center;
 }
 
 .contact__links {
@@ -814,6 +865,7 @@ h4 {
   display: flex;
   gap: 1.2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact__link {
