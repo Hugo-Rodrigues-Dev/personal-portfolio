@@ -589,15 +589,8 @@ const portfolioApp = (() => {
       card.addEventListener('pointermove', updateTargets);
       card.addEventListener('pointerleave', resetTargets);
       card.addEventListener('pointercancel', resetTargets);
-      card.addEventListener('pointerdown', (event) => {
-        card.setPointerCapture?.(event.pointerId);
-        updateTargets(event);
-      });
-
-      card.addEventListener('pointerup', (event) => {
-        card.releasePointerCapture?.(event.pointerId);
-        resetTargets();
-      });
+      card.addEventListener('pointerdown', updateTargets);
+      card.addEventListener('pointerup', resetTargets);
     });
   };
 
