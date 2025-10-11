@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Application Tracking Spreadsheet | Portfolio</title>
+    <meta
+      name="description"
+      content="Fiche projet détaillée : Job Application Tracking Spreadsheet. Suivi de candidatures, organisation des relances et export Excel."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/png" href="../assets/images/HugoGrandeTailleLogo.png" />
+  </head>
+  <body class="project-page">
+    <header class="project-header">
+      <div class="container project-header__inner">
+        <nav class="project-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span class="project-breadcrumb__separator">/</span>
+          <a href="../index.html#projects">Projets</a>
+          <span class="project-breadcrumb__separator">/</span>
+          <span>Job Application Tracking Spreadsheet</span>
+        </nav>
+        <span>Fiche projet</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="project-hero">
+        <div class="container project-hero__inner">
+          <div class="project-hero__card">
+            <h1 class="project-hero__title">Job Application Tracking Spreadsheet</h1>
+            <div class="project-hero__meta">
+              <span>Gestion de candidatures</span>
+              <span>Front-end only</span>
+            </div>
+            <p class="project-hero__summary">
+              Tableau de bord web pensé pour suivre mes candidatures en stage et alternance : chaque contact,
+              chaque relance et chaque échéance reste visible d'un coup d'œil, sans dépendre d'un back-end.
+            </p>
+            <div class="project-hero__tags">
+              <span class="project-pill">React 19</span>
+              <span class="project-pill">Tailwind CSS</span>
+              <span class="project-pill">Vite</span>
+              <span class="project-pill">localStorage</span>
+            </div>
+            <div class="project-links project-hero__cta">
+              <a
+                class="btn btn--primary btn--sm"
+                href="https://github.com/Hugo-Rodrigues-Dev/job-application-tracking-spreadsheet"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Code source
+              </a>
+              <a class="btn btn--ghost btn--sm" href="../index.html#projects">Retour au portfolio</a>
+            </div>
+          </div>
+          <div class="project-hero__media">
+            Captures d'écran en cours de préparation (vue tableau, fiche contact, export Excel).
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Résumé du projet</h2>
+          <p class="project-section__intro">
+            Partant d'un Google Sheet trop peu ergonomique, j'ai construit une application réactive qui facilite
+            le suivi des pipelines de recrutement. L'interface est optimisée pour clavier et mobile, et conserve
+            toutes les données directement dans le navigateur.
+          </p>
+          <div class="project-section__grid">
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Problématique</h3>
+              <p class="project-highlight__content">
+                Multiplier les candidatures signifie jongler avec des dizaines de contacts, de dates et
+                d'actions à planifier. Les tableurs perdent vite en lisibilité et n'offrent pas de rappels
+                proactifs.
+              </p>
+            </article>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Solution</h3>
+              <p class="project-highlight__content">
+                Organiser les candidatures sous forme de cartes filtrables, avec des statuts explicites, des
+                dates clés et un suivi d'activité instantané. Les données persistent grâce à
+                <code>localStorage</code> et restent exportables en Excel.
+              </p>
+            </article>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Résultat</h3>
+              <p class="project-highlight__content">
+                Je sais en permanence où en sont mes candidatures prioritaires, quelles relances programmer et
+                quels contacts nécessitent un suivi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Fonctionnalités clés</h2>
+          <div class="project-section__grid">
+            <div>
+              <ul class="project-list">
+                <li>Noyau du tracker avec filtres, recherche et métriques pour suivre les candidatures.</li>
+                <li>Persistance locale et export Excel pour garder ses données accessibles hors ligne.</li>
+                <li>Formulaire d'ajout/édition en modale, tri et pagination pour gérer de gros volumes.</li>
+                <li>Tableau de bord analytique, vue entreprises et page de prioritisation des postes.</li>
+                <li>Navigation latérale, interface bilingue et paramètres utilisateur (dont mode sombre).</li>
+              </ul>
+            </div>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Stack &amp; outils</h3>
+              <p class="project-highlight__content">
+                React 19 (hooks), Tailwind CSS, Vite et lucide-react forment la base de l'IU. Les données sont
+                encore stockées côté client via <code>localStorage</code> en attendant la mise en place de la
+                couche serveur planifiée.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Prochaines étapes</h2>
+          <div class="project-section__grid">
+            <div>
+              <ul class="project-list">
+                <li>Adopter une base de données sécurisée et une authentification multi-appareils.</li>
+                <li>Mettre en place rappels/notifications, calendrier intégré et workflow d'archivage.</li>
+                <li>Concevoir une expérience mobile aboutie et une section dédiée aux CV/lettres.</li>
+                <li>Automatiser les tests/déploiements (CI/CD) et connecter les job boards pour importer les offres.</li>
+                <li>Développer des assistants IA : recherche d'opportunités, optimisation de CV, préparation d'entretiens.</li>
+              </ul>
+            </div>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Accompagnement Codex</h3>
+              <p class="project-highlight__content">
+                Codex m'aide à cadrer cette feuille de route ambitieuse : architecture serveur, intégrations IA et
+                pipelines automatisés sont explorés sans compromettre l'expérience utilisateur.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
