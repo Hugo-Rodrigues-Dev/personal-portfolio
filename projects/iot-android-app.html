@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IoT Android App | Portfolio</title>
+    <meta
+      name="description"
+      content="Fiche projet détaillée : IoT Android App. Visualisation temps réel des données capteurs micro:bit avec Android et UDP."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/png" href="../assets/images/HugoGrandeTailleLogo.png" />
+  </head>
+  <body class="project-page">
+    <header class="project-header">
+      <div class="container project-header__inner">
+        <nav class="project-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span class="project-breadcrumb__separator">/</span>
+          <a href="../index.html#projects">Projets</a>
+          <span class="project-breadcrumb__separator">/</span>
+          <span>IoT Android App</span>
+        </nav>
+        <span>Fiche projet</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="project-hero">
+        <div class="container project-hero__inner">
+          <div class="project-hero__card">
+            <h1 class="project-hero__title">IoT Android App</h1>
+            <div class="project-hero__meta">
+              <span>Android</span>
+              <span>IoT &amp; capteurs</span>
+            </div>
+            <p class="project-hero__summary">
+              Application Android réalisée à CPE Lyon pour se connecter à un serveur IoT, sélectionner un
+              micro:bit et afficher ses capteurs en temps réel. L'utilisateur réorganise les capteurs selon ses
+              priorités et suit les courbes directement sur son smartphone.
+            </p>
+            <div class="project-hero__tags">
+              <span class="project-pill">Java</span>
+              <span class="project-pill">Android SDK</span>
+              <span class="project-pill">UDP</span>
+              <span class="project-pill">MPAndroidChart</span>
+            </div>
+            <div class="project-links project-hero__cta">
+              <a
+                class="btn btn--primary btn--sm"
+                href="https://github.com/Hugo-Rodrigues-Dev/iot-android-app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Code source
+              </a>
+              <a class="btn btn--ghost btn--sm" href="../index.html#projects">Retour au portfolio</a>
+            </div>
+          </div>
+          <div class="project-hero__media">
+            Aperçus des écrans de connexion, sélection d'appareil et tableau de bord seront intégrés ici.
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Architecture de l'application</h2>
+          <div class="project-section__grid">
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Écran Connexion</h3>
+              <p class="project-highlight__content">
+                Saisie de l'adresse IP et du port du serveur, contrôle de la connexion et bouton pour activer
+                le mode démo hors ligne.
+              </p>
+            </article>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Écran Sélection d'appareil</h3>
+              <p class="project-highlight__content">
+                Liste des micro:bits disponibles, informations de statut et sélection de l'appareil à
+                monitorer.
+              </p>
+            </article>
+            <article class="project-highlight">
+              <h3 class="project-highlight__title">Tableau de bord principal</h3>
+              <p class="project-highlight__content">
+                Visualisation temps réel avec MPAndroidChart, cartes de capteurs réordonnables en drag &amp;
+                drop, envoi des préférences au serveur.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Fonctionnalités principales</h2>
+          <div class="project-section__grid">
+            <div>
+              <ul class="project-list">
+                <li>Connexion réseau en UDP pour recevoir les mesures avec une latence minimale.</li>
+                <li>
+                  Graphique en temps réel du capteur prioritaire, mis à jour au fur et à mesure des paquets.
+                </li>
+                <li>
+                  Réorganisation des capteurs via RecyclerView, persistée et renvoyée au serveur pour synchroniser
+                  l'affichage.
+                </li>
+                <li>Mode démo autonome pour tester l'application sans serveur ni micro:bit.</li>
+              </ul>
+            </div>
+            <div>
+              <article class="project-highlight">
+                <h3 class="project-highlight__title">Expérience utilisateur</h3>
+                <p class="project-highlight__content">
+                  UI inspirée de la charte CPE Lyon : contrastes doux, icônes explicites, feedback sur les états
+                  de connexion et transitions fluides entre les écrans.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 class="project-section__title">Perspectives</h2>
+          <div class="project-section__grid">
+            <div>
+              <ul class="project-list">
+                <li>Ajouter une sauvegarde des capteurs favoris côté client.</li>
+                <li>Notifier l'utilisateur en cas de perte de connexion ou d'intervalle de mesure anormal.</li>
+                <li>Exporter un rapport PDF avec les mesures clés sur une période donnée.</li>
+              </ul>
+            </div>
+            <div>
+              <article class="project-highlight">
+                <h3 class="project-highlight__title">Enseignements</h3>
+                <p class="project-highlight__content">
+                  Ce projet m'a permis d'appliquer les principes SOLID sur Android, de manipuler des sockets UDP
+                  et de concevoir une architecture modulaire pour capteurs connectés.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
