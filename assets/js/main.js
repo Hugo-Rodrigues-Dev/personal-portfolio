@@ -618,8 +618,23 @@ const portfolioApp = (() => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            const { target } = entry;
+            target.classList.add('is-visible');
+
+            const delayAttr = target.dataset.revealDelay;
+            if (delayAttr) {
+              const delay = Number.parseFloat(delayAttr);
+              if (!Number.isNaN(delay)) {
+                const clearDelayAfter = Math.max(delay + 120, 160);
+                window.setTimeout(() => {
+                  target.style.transitionDelay = '';
+                }, clearDelayAfter);
+              }
+            } else {
+              target.style.transitionDelay = '';
+            }
+
+            observer.unobserve(target);
           }
         });
       },
