@@ -1071,19 +1071,14 @@ h4 {
   gap: 1.5rem;
   padding: 3rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(145deg, rgba(8, 16, 36, 0.85), rgba(10, 22, 52, 0.7));
+  background: linear-gradient(180deg, rgba(4, 10, 24, 0.96) 0%, rgba(7, 16, 36, 0.92) 38%, rgba(12, 28, 60, 0.86) 68%, rgba(20, 44, 88, 0.8) 100%);
   border: 1px solid rgba(108, 221, 255, 0.18);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
 
 .contact::before {
-  content: "";
-  position: absolute;
-  inset: -40% 35% 35% -25%;
-  background: radial-gradient(circle, rgba(108, 221, 255, 0.35), transparent 65%);
-  opacity: 0.55;
-  pointer-events: none;
+  content: none;
 }
 
 .contact__avatar {
@@ -1109,6 +1104,12 @@ h4 {
   gap: 1.2rem;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+
+.contact__links::before {
+  content: none;
 }
 
 .contact__link {
@@ -1120,7 +1121,25 @@ h4 {
   border-radius: 16px;
   background: rgba(8, 17, 35, 0.8);
   border: 1px solid rgba(108, 221, 255, 0.25);
+  position: relative;
+  z-index: 0;
   transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.contact__link::before {
+  content: "";
+  position: absolute;
+  inset: -0.35rem;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(124, 249, 255, 0.28) 0%, rgba(124, 249, 255, 0.1) 38%, transparent 68%),
+    radial-gradient(circle at 80% 50%, rgba(124, 249, 255, 0.28) 0%, rgba(124, 249, 255, 0.1) 38%, transparent 68%),
+    linear-gradient(90deg, rgba(124, 249, 255, 0.24) 0%, rgba(124, 249, 255, 0.06) 42%, rgba(124, 249, 255, 0.02) 50%, rgba(124, 249, 255, 0.06) 58%, rgba(124, 249, 255, 0.24) 100%);
+  opacity: 0.55;
+  filter: blur(0.9px);
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+  z-index: -1;
 }
 
 .contact__link:hover,
@@ -1128,6 +1147,11 @@ h4 {
   transform: translateY(-6px);
   border-color: rgba(124, 249, 255, 0.6);
   box-shadow: var(--shadow-float);
+}
+
+.contact__link:hover::before,
+.contact__link:focus-visible::before {
+  opacity: 0;
 }
 
 .contact__icon {
