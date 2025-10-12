@@ -639,9 +639,9 @@ h4 {
 .skills__group::before {
   content: "";
   position: absolute;
-  inset: 12% 18% auto;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(108, 221, 255, 0), rgba(108, 221, 255, 0.6), transparent);
+  inset: auto 18% 8%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(124, 249, 255, 0.55), transparent);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
