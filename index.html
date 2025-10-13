@@ -58,17 +58,23 @@
               <a class="btn btn--ghost" href="#contact">Discuter d'une opportunité</a>
             </div>
           </div>
-          <div class="hero__visual" aria-hidden="true" data-hero-visual>
-            <div class="hero__halo"></div>
-            <div class="hero__orb hero__orb--primary"></div>
-            <div class="hero__orb hero__orb--secondary"></div>
-            <div class="hero__avatar">
-              <div class="hero__avatar-backdrop"></div>
-              <canvas class="hero__canvas" data-hero-canvas></canvas>
-              <div class="hero__avatar-frame"></div>
+          <div class="hero__visual">
+            <div class="hero-bot" data-hero-bot>
+              <div class="hero-bot__body">
+                <div class="hero-bot__antenna"><span></span></div>
+                <div class="hero-bot__shell">
+                  <div class="hero-bot__inner">
+                    <div class="hero-bot__visor"></div>
+                    <div class="hero-bot__eyes">
+                      <span class="hero-bot__eye hero-bot__eye--left" data-hero-eye="left"></span>
+                      <span class="hero-bot__eye hero-bot__eye--right" data-hero-eye="right"></span>
+                    </div>
+                    <div class="hero-bot__jaw"></div>
+                  </div>
+                </div>
+                <div class="hero-bot__glow"></div>
+              </div>
             </div>
-            <div class="hero__chip hero__chip--ai">IA</div>
-            <div class="hero__chip hero__chip--code">{ }</div>
           </div>
         </div>
       </section>
@@ -402,7 +408,6 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/three@0.166.0/build/three.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
