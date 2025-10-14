@@ -495,6 +495,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   gap: clamp(0.6rem, 2vw, 1rem);
+  transition: filter 180ms ease;
 }
 
 @media (max-width: 960px) {
@@ -517,6 +518,7 @@ h4 {
   padding: 14%;
   transition: transform 220ms ease;
   will-change: transform;
+  z-index: 1;
 }
 
 .hero-bot__head::after {
@@ -634,6 +636,7 @@ h4 {
   align-items: center;
   justify-content: flex-start;
   padding: clamp(1.6rem, 4vw, 2rem) clamp(1.4rem, 3.4vw, 2rem);
+  transition: background 200ms ease, border 200ms ease, box-shadow 200ms ease;
 }
 
 .hero-bot__arms {
@@ -657,6 +660,7 @@ h4 {
   align-items: center;
   gap: clamp(0.4rem, 1.4vw, 0.7rem);
   transform-origin: top center;
+  transition: transform 220ms ease;
 }
 
 .hero-bot__arm--left {
@@ -789,6 +793,70 @@ h4 {
 .hero-bot__panel-light--accent.is-active {
   background: radial-gradient(circle, rgba(255, 214, 164, 0.95), rgba(255, 128, 72, 0.7));
   box-shadow: 0 0 36px rgba(255, 189, 136, 0.95);
+}
+
+.hero-bot.is-alert {
+  filter: drop-shadow(0 0 28px rgba(255, 96, 96, 0.4));
+}
+
+.hero-bot.is-alert .hero-bot__head,
+.hero-bot.is-alert .hero-bot__torso,
+.hero-bot.is-alert .hero-bot__face,
+.hero-bot.is-alert .hero-bot__panel,
+.hero-bot.is-alert .hero-bot__chest,
+.hero-bot.is-alert .hero-bot__upper-arm,
+.hero-bot.is-alert .hero-bot__forearm,
+.hero-bot.is-alert .hero-bot__hand,
+.hero-bot.is-alert .hero-bot__knee,
+.hero-bot.is-alert .hero-bot__foot,
+.hero-bot.is-alert .hero-bot__panel-light,
+.hero-bot.is-alert .hero-bot__panel-light--accent,
+.hero-bot.is-alert .hero-bot__smile,
+.hero-bot.is-alert .hero-bot__face::before,
+.hero-bot.is-alert .hero-bot__head::after {
+  background: linear-gradient(180deg, rgba(255, 120, 120, 0.9), rgba(120, 20, 20, 0.9)) !important;
+  box-shadow: inset 0 -20px 28px rgba(60, 10, 10, 0.6) !important;
+  border-color: rgba(255, 150, 150, 0.5) !important;
+}
+
+.hero-bot.is-alert .hero-bot__panel-light,
+.hero-bot.is-alert .hero-bot__panel-light--accent {
+  box-shadow: 0 0 32px rgba(255, 128, 128, 0.9) !important;
+}
+
+.hero-bot.is-alert .hero-bot__antenna,
+.hero-bot.is-alert .hero-bot__antenna span {
+  background: linear-gradient(180deg, rgba(255, 102, 102, 0.95), rgba(180, 36, 36, 0.75));
+  box-shadow: 0 0 48px rgba(255, 120, 120, 0.9);
+}
+
+.hero-bot.is-alert .hero-bot__smile {
+  border: 1px solid rgba(255, 180, 180, 0.4);
+}
+
+.hero-bot.is-alert .hero-bot__eye {
+  background: radial-gradient(circle, rgba(255, 210, 210, 0.9), rgba(180, 30, 30, 0.9));
+  box-shadow: 0 0 26px rgba(255, 120, 120, 0.8);
+}
+
+.hero-bot.is-alert .hero-bot__shadow {
+  background: radial-gradient(circle, rgba(60, 0, 0, 0.7), transparent 70%);
+}
+
+.hero-bot__arm--left.is-raised {
+  transform: rotate(72deg) translateX(6px) translateY(-8px);
+}
+
+.hero-bot__arm--right.is-raised {
+  transform: rotate(-72deg) translateX(-6px) translateY(-8px);
+}
+
+.hero-bot__arm--left.is-raised .hero-bot__forearm {
+  transform: rotate(-20deg) translateY(-22px);
+}
+
+.hero-bot__arm--right.is-raised .hero-bot__forearm {
+  transform: rotate(20deg) translateY(-22px);
 }
 
 .hero-bot__legs {
