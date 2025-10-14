@@ -76,7 +76,7 @@ const portfolioApp = (() => {
   };
 
   const initHeroBot = () => {
-    if (shouldReduceMotion() || window.matchMedia('(pointer: coarse)').matches) {
+    if (shouldReduceMotion()) {
       return;
     }
 
@@ -85,11 +85,12 @@ const portfolioApp = (() => {
       return;
     }
 
-    const body = bot.querySelector('.hero-bot__body');
-    const leftEye = bot.querySelector('[data-hero-eye="left"]');
-    const rightEye = bot.querySelector('[data-hero-eye="right"]');
+    const head = bot.querySelector('[data-hero-head]');
+    const antenna = bot.querySelector('[data-hero-antenna]');
+    const eyes = bot.querySelectorAll('[data-hero-eye]');
+    const buttons = bot.querySelectorAll('[data-panel-button]');
 
-    if (!body || !leftEye || !rightEye) {
+    if (!head || !antenna || eyes.length < 2) {
       return;
     }
 
@@ -99,35 +100,54 @@ const portfolioApp = (() => {
       normX: 0,
       normY: 0,
       targetNormX: 0,
-      targetNormY: 0
+      targetNormY: 0,
+      isVisible: false
     };
 
-    const clampValue = (value, min, max) => Math.min(Math.max(value, min), max);
-
     const update = () => {
-      state.normX += (state.targetNormX - state.normX) * 0.18;
-      state.normY += (state.targetNormY - state.normY) * 0.18;
+      const smoothing = state.isVisible ? 0.18 : 0.12;
+      state.normX += (state.targetNormX - state.normX) * smoothing;
+      state.normY += (state.targetNormY - state.normY) * smoothing;
 
       const eyeOffsetX = state.normX * maxEyeOffset;
       const eyeOffsetY = state.normY * maxEyeOffset;
-      const tiltX = clampValue(state.normY * maxTilt, -maxTilt, maxTilt);
-      const tiltY = clampValue(-state.normX * maxTilt, -maxTilt, maxTilt);
+      const tiltX = clamp(state.normY * maxTilt, -maxTilt, maxTilt);
+      const tiltY = clamp(-state.normX * maxTilt, -maxTilt, maxTilt);
 
-      leftEye.style.transform = `translate3d(${eyeOffsetX}px, ${eyeOffsetY}px, 0)`;
-      rightEye.style.transform = `translate3d(${eyeOffsetX}px, ${eyeOffsetY}px, 0)`;
-      body.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      eyes.forEach((eye) => {
+        eye.style.transform = `translate3d(${eyeOffsetX}px, ${eyeOffsetY}px, 0)`;
+      });
+      head.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 
       requestAnimationFrame(update);
     };
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          state.isVisible = entry.isIntersecting;
+          if (!state.isVisible) {
+            state.targetNormX = 0;
+            state.targetNormY = 0;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(bot);
     update();
 
     const handlePointer = (event) => {
+      if (!state.isVisible) {
+        return;
+      }
+
       const rect = bot.getBoundingClientRect();
       const x = (event.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
       const y = (event.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-      state.targetNormX = clampValue(x, -1, 1);
-      state.targetNormY = clampValue(y, -1, 1);
+      state.targetNormX = clamp(x, -1, 1);
+      state.targetNormY = clamp(y, -1, 1);
     };
 
     const resetPointer = () => {
@@ -140,6 +160,64 @@ const portfolioApp = (() => {
     window.addEventListener('pointerleave', resetPointer);
     window.addEventListener('blur', resetPointer);
     window.addEventListener('resize', resetPointer);
+    window.addEventListener('pointercancel', resetPointer);
+
+    const setAntennaAlert = (isActive) => {
+      if (isActive) {
+        antenna.classList.add('is-alert');
+        return;
+      }
+      antenna.classList.remove('is-alert');
+    };
+
+    antenna.addEventListener('pointerenter', () => setAntennaAlert(true));
+    antenna.addEventListener('pointerdown', (event) => {
+      event.preventDefault();
+      setAntennaAlert(true);
+    });
+    antenna.addEventListener('pointerleave', () => setAntennaAlert(false));
+    antenna.addEventListener('pointerup', () => setAntennaAlert(false));
+    antenna.addEventListener('blur', () => setAntennaAlert(false));
+    antenna.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        setAntennaAlert(true);
+      }
+    });
+    antenna.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        setAntennaAlert(false);
+      }
+    });
+
+    buttons.forEach((button) => {
+      button.addEventListener('pointerenter', () => button.classList.add('is-hovered'));
+      button.addEventListener('pointerleave', () => {
+        button.classList.remove('is-hovered');
+        button.classList.remove('is-active');
+      });
+      button.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
+        button.classList.add('is-hovered');
+        button.classList.add('is-active');
+      });
+      button.addEventListener('pointerup', () => button.classList.remove('is-active'));
+      button.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          button.classList.add('is-active');
+        }
+      });
+      button.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          button.classList.remove('is-active');
+        }
+      });
+      button.addEventListener('blur', () => {
+        button.classList.remove('is-hovered');
+        button.classList.remove('is-active');
+      });
+    });
   };
 
   const initTiltCards = () => {
