@@ -59,13 +59,21 @@
             </div>
           </div>
           <div class="hero__visual">
-            <div class="hero-bot">
-              <div class="hero-bot__head">
-                <div class="hero-bot__antenna"><span></span></div>
+            <div class="hero-bot" data-hero-bot>
+              <div class="hero-bot__head" data-hero-head>
+                <div
+                  class="hero-bot__antenna"
+                  data-hero-antenna
+                  role="button"
+                  tabindex="0"
+                  aria-label="Taper sur l'antenne du robot"
+                >
+                  <span></span>
+                </div>
                 <div class="hero-bot__face">
                   <div class="hero-bot__eyes">
-                    <span class="hero-bot__eye hero-bot__eye--left"></span>
-                    <span class="hero-bot__eye hero-bot__eye--right"></span>
+                    <span class="hero-bot__eye hero-bot__eye--left" data-hero-eye="left"></span>
+                    <span class="hero-bot__eye hero-bot__eye--right" data-hero-eye="right"></span>
                   </div>
                   <div class="hero-bot__smile"></div>
                 </div>
@@ -85,9 +93,24 @@
                 </div>
                 <div class="hero-bot__chest"></div>
                 <div class="hero-bot__panel">
-                  <span class="hero-bot__panel-light"></span>
-                  <span class="hero-bot__panel-light hero-bot__panel-light--accent"></span>
-                  <span class="hero-bot__panel-light"></span>
+                  <button
+                    class="hero-bot__panel-light"
+                    type="button"
+                    data-panel-button="left"
+                    aria-label="Activer le module gauche"
+                  ></button>
+                  <button
+                    class="hero-bot__panel-light hero-bot__panel-light--accent"
+                    type="button"
+                    data-panel-button="center"
+                    aria-label="Activer le module central"
+                  ></button>
+                  <button
+                    class="hero-bot__panel-light"
+                    type="button"
+                    data-panel-button="right"
+                    aria-label="Activer le module droit"
+                  ></button>
                 </div>
               </div>
               <div class="hero-bot__legs">
