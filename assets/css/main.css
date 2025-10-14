@@ -484,6 +484,8 @@ h4 {
   justify-content: center;
   align-items: flex-end;
   padding: clamp(2.4rem, 5vw, 3.6rem);
+  justify-self: end;
+  width: min(100%, 420px);
 }
 
 .hero-bot {
@@ -493,6 +495,12 @@ h4 {
   flex-direction: column;
   align-items: center;
   gap: clamp(0.6rem, 2vw, 1rem);
+}
+
+@media (max-width: 960px) {
+  .hero__visual {
+    justify-self: center;
+  }
 }
 
 .hero-bot__head {
@@ -507,6 +515,8 @@ h4 {
   align-items: center;
   justify-content: center;
   padding: 14%;
+  transition: transform 220ms ease;
+  will-change: transform;
 }
 
 .hero-bot__head::after {
@@ -528,6 +538,8 @@ h4 {
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(124, 249, 255, 0.7), rgba(36, 90, 180, 0.34));
   box-shadow: 0 -12px 28px rgba(124, 249, 255, 0.5);
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  cursor: pointer;
 }
 
 .hero-bot__antenna span {
@@ -540,6 +552,22 @@ h4 {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(124, 249, 255, 0.95), rgba(18, 66, 132, 0.4));
   box-shadow: 0 0 38px rgba(124, 249, 255, 0.75);
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-bot__antenna.is-alert {
+  background: linear-gradient(180deg, rgba(255, 102, 102, 0.9), rgba(180, 36, 36, 0.6));
+  box-shadow: 0 -12px 32px rgba(255, 96, 96, 0.65);
+}
+
+.hero-bot__antenna.is-alert span {
+  background: radial-gradient(circle, rgba(255, 150, 150, 0.9), rgba(180, 36, 36, 0.6));
+  box-shadow: 0 0 42px rgba(255, 120, 120, 0.75);
+}
+
+.hero-bot__antenna:focus-visible {
+  outline: 2px solid rgba(255, 150, 150, 0.6);
+  outline-offset: 4px;
 }
 
 .hero-bot__face {
@@ -698,7 +726,7 @@ h4 {
 .hero-bot__panel {
   position: relative;
   margin-top: clamp(1.2rem, 3vw, 1.8rem);
-  width: 72%;
+  width: min(72%, 220px);
   height: clamp(62px, 14vw, 80px);
   border-radius: 24px;
   background: radial-gradient(circle at 50% 28%, rgba(124, 249, 255, 0.22), rgba(8, 18, 36, 0.92));
@@ -712,16 +740,55 @@ h4 {
 }
 
 .hero-bot__panel-light {
-  width: clamp(16px, 4vw, 20px);
+  width: clamp(16px, 4vw, 22px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(124, 249, 255, 0.9), rgba(20, 80, 140, 0.45));
   box-shadow: 0 0 18px rgba(124, 249, 255, 0.55);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
 .hero-bot__panel-light--accent {
   background: radial-gradient(circle, rgba(255, 196, 150, 0.85), rgba(255, 139, 82, 0.6));
   box-shadow: 0 0 18px rgba(255, 180, 120, 0.6);
+}
+
+.hero-bot__panel-light:hover,
+.hero-bot__panel-light.is-hovered {
+  transform: scale(1.25);
+  box-shadow: 0 0 26px rgba(124, 249, 255, 0.85);
+}
+
+.hero-bot__panel-light--accent:hover,
+.hero-bot__panel-light--accent.is-hovered {
+  box-shadow: 0 0 28px rgba(255, 193, 136, 0.9);
+}
+
+.hero-bot__panel-light:focus-visible {
+  transform: scale(1.25);
+  box-shadow: 0 0 26px rgba(124, 249, 255, 0.85);
+  outline: 2px solid rgba(124, 249, 255, 0.6);
+  outline-offset: 4px;
+}
+
+.hero-bot__panel-light--accent:focus-visible {
+  box-shadow: 0 0 28px rgba(255, 193, 136, 0.9);
+}
+
+.hero-bot__panel-light.is-active {
+  background: radial-gradient(circle, rgba(124, 249, 255, 0.95), rgba(44, 120, 200, 0.6));
+  box-shadow: 0 0 32px rgba(124, 249, 255, 0.95);
+}
+
+.hero-bot__panel-light--accent.is-active {
+  background: radial-gradient(circle, rgba(255, 214, 164, 0.95), rgba(255, 128, 72, 0.7));
+  box-shadow: 0 0 36px rgba(255, 189, 136, 0.95);
 }
 
 .hero-bot__legs {
