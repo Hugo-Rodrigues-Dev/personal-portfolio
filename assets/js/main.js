@@ -89,8 +89,10 @@ const portfolioApp = (() => {
     const antenna = bot.querySelector('[data-hero-antenna]');
     const eyes = bot.querySelectorAll('[data-hero-eye]');
     const buttons = bot.querySelectorAll('[data-panel-button]');
+    const leftArm = bot.querySelector('.hero-bot__arm--left');
+    const rightArm = bot.querySelector('.hero-bot__arm--right');
 
-    if (!head || !antenna || eyes.length < 2) {
+    if (!head || !antenna || eyes.length < 2 || !leftArm || !rightArm) {
       return;
     }
 
@@ -162,21 +164,35 @@ const portfolioApp = (() => {
     window.addEventListener('resize', resetPointer);
     window.addEventListener('pointercancel', resetPointer);
 
+    const setArmsState = ({ raiseLeft = false, raiseRight = false } = {}) => {
+      leftArm.classList.toggle('is-raised', raiseLeft);
+      rightArm.classList.toggle('is-raised', raiseRight);
+    };
+
     const setAntennaAlert = (isActive) => {
       if (isActive) {
+        bot.classList.add('is-alert');
         antenna.classList.add('is-alert');
         return;
       }
+      bot.classList.remove('is-alert');
       antenna.classList.remove('is-alert');
     };
 
-    antenna.addEventListener('pointerenter', () => setAntennaAlert(true));
     antenna.addEventListener('pointerdown', (event) => {
       event.preventDefault();
+      if (event.pointerId !== undefined && antenna.setPointerCapture) {
+        try {
+          antenna.setPointerCapture(event.pointerId);
+        } catch (error) {
+          // pointer capture may fail on some browsers; ignore
+        }
+      }
       setAntennaAlert(true);
     });
     antenna.addEventListener('pointerleave', () => setAntennaAlert(false));
     antenna.addEventListener('pointerup', () => setAntennaAlert(false));
+    antenna.addEventListener('pointercancel', () => setAntennaAlert(false));
     antenna.addEventListener('blur', () => setAntennaAlert(false));
     antenna.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -195,27 +211,53 @@ const portfolioApp = (() => {
       button.addEventListener('pointerleave', () => {
         button.classList.remove('is-hovered');
         button.classList.remove('is-active');
+        setArmsState();
       });
       button.addEventListener('pointerdown', (event) => {
         event.preventDefault();
         button.classList.add('is-hovered');
         button.classList.add('is-active');
+        const action = button.dataset.panelButton;
+        if (action === 'center') {
+          setArmsState({ raiseLeft: true, raiseRight: true });
+        } else if (action === 'left') {
+          setArmsState({ raiseRight: true });
+        } else if (action === 'right') {
+          setArmsState({ raiseLeft: true });
+        }
       });
-      button.addEventListener('pointerup', () => button.classList.remove('is-active'));
+      button.addEventListener('pointerup', () => {
+        button.classList.remove('is-active');
+        setArmsState();
+      });
+      button.addEventListener('pointercancel', () => {
+        button.classList.remove('is-active');
+        setArmsState();
+      });
       button.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           button.classList.add('is-active');
+          const action = button.dataset.panelButton;
+          if (action === 'center') {
+            setArmsState({ raiseLeft: true, raiseRight: true });
+          } else if (action === 'left') {
+            setArmsState({ raiseRight: true });
+          } else if (action === 'right') {
+            setArmsState({ raiseLeft: true });
+          }
         }
       });
       button.addEventListener('keyup', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           button.classList.remove('is-active');
+          setArmsState();
         }
       });
       button.addEventListener('blur', () => {
         button.classList.remove('is-hovered');
         button.classList.remove('is-active');
+        setArmsState();
       });
     });
   };
