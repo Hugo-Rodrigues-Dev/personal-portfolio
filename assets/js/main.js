@@ -6,7 +6,8 @@ const portfolioApp = (() => {
     navLinks: '.site-nav__link',
     currentYear: '[data-current-year]',
     tiltCard: '[data-tilt-card]',
-    reveal: '[data-reveal]'
+    reveal: '[data-reveal]',
+    scrollProgress: '[data-scroll-progress]'
   };
 
   const state = {
@@ -73,6 +74,53 @@ const portfolioApp = (() => {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  };
+
+  const initScrollProgress = () => {
+    const bar = document.querySelector(selectors.scrollProgress);
+    if (!bar) {
+      return;
+    }
+
+    const container = bar.closest('.scroll-progress');
+    if (!container) {
+      return;
+    }
+
+    let target = 0;
+    let current = 0;
+    let rafId = null;
+
+    const applyProgress = () => {
+      const easing = 0.2;
+      current += (target - current) * easing;
+
+      if (Math.abs(target - current) < 0.002) {
+        current = target;
+      } else {
+        rafId = requestAnimationFrame(applyProgress);
+      }
+
+      const percentage = current * 100;
+      bar.style.height = `${percentage}%`;
+      container.classList.toggle('is-active', percentage > 0.5);
+    };
+
+    const updateTarget = () => {
+      const scrollTop = window.scrollY;
+      const viewport = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight - viewport;
+      target = docHeight > 0 ? clamp(scrollTop / docHeight, 0, 1) : 0;
+
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(applyProgress);
+    };
+
+    window.addEventListener('scroll', updateTarget, { passive: true });
+    window.addEventListener('resize', updateTarget);
+    updateTarget();
   };
 
   const initHeroBot = () => {
@@ -185,7 +233,7 @@ const portfolioApp = (() => {
         try {
           antenna.setPointerCapture(event.pointerId);
         } catch (error) {
-          // pointer capture may fail on some browsers; ignore
+          // Ignore pointer capture failures on unsupported browsers
         }
       }
       setAntennaAlert(true);
@@ -439,6 +487,7 @@ const portfolioApp = (() => {
     toggleNavigation();
     updateCurrentYear();
     watchHeaderScroll();
+    initScrollProgress();
     initHeroBot();
     initTiltCards();
     initReveal();
