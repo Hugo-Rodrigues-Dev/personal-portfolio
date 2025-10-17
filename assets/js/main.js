@@ -7,19 +7,519 @@ const portfolioApp = (() => {
     currentYear: '[data-current-year]',
     tiltCard: '[data-tilt-card]',
     reveal: '[data-reveal]',
-    scrollProgress: '[data-scroll-progress]'
+    scrollProgress: '[data-scroll-progress]',
+    languageSwitch: '[data-language-switch]',
+    languageOption: '[data-language-switch] [data-language]'
   };
 
   const state = {
     navOpen: false,
+    language: 'fr',
     prefersReducedMotion: window.matchMedia
       ? window.matchMedia('(prefers-reduced-motion: reduce)')
       : { matches: false }
   };
 
+  const translations = {
+    fr: {
+      language: {
+        switchLabel: 'Sélecteur de langue'
+      },
+      logo: {
+        alt: 'Logo Hugo Rodrigues'
+      },
+      header: {
+        navToggle: 'Ouvrir le menu',
+        navClose: 'Fermer le menu'
+      },
+      nav: {
+        about: 'À propos',
+        skills: 'Compétences',
+        projects: 'Projets',
+        experience: 'Expériences',
+        education: 'Formations',
+        contact: 'Contact'
+      },
+      hero: {
+        eyebrow: 'Apprenti développeur logiciel chez Orange',
+        title: 'Étudiant ingénieur à CPE Lyon',
+        subtitle:
+          "Passionné par les technologies émergentes, notamment l'intelligence artificielle, la robotique et le développement web, je consolide mes bases en ingénierie logicielle tout en préparant un stage international de 2 à 3 mois pour l'été 2026.",
+        ctaProjects: 'Découvrir mes projets',
+        ctaContact: "Discuter d'une opportunité",
+        antennaLabel: "Taper sur l'antenne du robot",
+        panelLeft: 'Activer le module gauche',
+        panelCenter: 'Activer le module central',
+        panelRight: 'Activer le module droit'
+      },
+      about: {
+        eyebrow: 'À propos',
+        title: "Ingénieur logiciel passionné par l'Informatique et les nouvelles technologies",
+        paragraph1:
+          "Etudiant ingénieur en Informatique & Réseaux de Communication à CPE Lyon et apprenti développeur logiciel chez Orange. J'oriente mes travaux vers l'intelligence artificielle, la robotique et le développement web.",
+        paragraph2:
+          "Curieux de nature, j'explore la data science et les nouvelles tendances technologiques, mais je me ressource surtout à travers le sport collectif : handballeur depuis quinze ans, j'ai aussi eu la chance de coacher de jeunes équipes et d'arbitrer des rencontres officielles."
+      },
+      skills: {
+        eyebrow: 'Compétences',
+        title: 'Mes connaissances techniques',
+        groups: {
+          languages: {
+            title: 'Langages & web',
+            items: ['Java', 'Python', 'C#', 'C', 'JavaScript, HTML/CSS, Razor']
+          },
+          databases: {
+            title: 'Bases de données',
+            items: ['SQL, PostgreSQL, MongoDB', 'MySQL', 'SQL Developer, Access']
+          },
+          methods: {
+            title: 'IA, modélisation & méthodes',
+            items: [
+              'Architecture logicielle, DevOps, Systèmes embarqués & IoT',
+              'Gestion de projet, Économie, Droit',
+              'UML, MLD, MVP, normalisation, algèbre relationnelle'
+            ]
+          }
+        }
+      },
+      projects: {
+        eyebrow: 'Projets',
+        title: 'Sélection de réalisations',
+        cta: 'Voir tous les projets',
+        cards: {
+          job: {
+            description:
+              'Application pour suivre mes candidatures, organiser les contacts, les relances et les échéances depuis une interface claire accessible sur desktop comme mobile.',
+            code: 'Code',
+            more: 'Voir plus'
+          },
+          python: {
+            description:
+              'Dépôt personnel où je documente mon parcours sur les fondamentaux Python, les structures de données, les algorithmes et la programmation orientée objet, avec des exemples progressifs.',
+            code: 'Code',
+            more: 'Voir plus'
+          },
+          iot: {
+            description:
+              "Application Android réalisée à CPE Lyon pour afficher en temps réel des données de capteurs via UDP, choisir un serveur distant et visualiser graphiquement les mesures depuis l'application mobile.",
+            code: 'Code',
+            more: 'Voir plus'
+          }
+        }
+      },
+      experience: {
+        eyebrow: 'Expériences',
+        title: 'Parcours professionnel',
+        items: {
+          orange: {
+            role: 'Apprenti développeur logiciel',
+            meta: 'Orange · Lyon · 2024 — 2027',
+            description:
+              "Conception et développement d'une nouvelle API REST, intégration de services partenaires, automatisation de l'enrichissement et de la gestion des erreurs, rédaction de tests unitaires et d'intégration (JUnit, Mockito, Castle Mock) et application des bonnes pratiques Agile."
+          },
+          kardham: {
+            role: 'Apprenti développeur logiciel',
+            meta: 'Kardham Digital · Dijon · 2023 — 2024',
+            description:
+              "Ajout de nouvelles fonctionnalités à des applications internes, résolution d'anomalies et maintenance applicative, conception de dashboards métier avec Blazor et les APIs d'Enedis."
+          },
+          tech2023: {
+            role: 'Technicien IT (Intérim)',
+            meta: 'La Pierrette S.A. · Suisse · juil. 2023 — août 2023',
+            description:
+              "Mission estivale au sein du service informatique : installation et mise en service du matériel, préparation des postes utilisateurs et déploiement des mises à jour logicielles."
+          },
+          intern: {
+            role: 'Développeur logiciel (Stage)',
+            meta: 'La Pierrette S.A. · Suisse · mai 2023 — juin 2023',
+            description:
+              "Conception d'une application de gestion de contacts internes, prête pour le déploiement, construite en C# / WPF avec une base de données SQL."
+          },
+          tech2022: {
+            role: 'Technicien IT (Intérim)',
+            meta: 'La Pierrette S.A. · Suisse · juil. 2022 — août 2022',
+            description:
+              "Support technique et préparation de postes : rédaction de procédures d'installation, configuration de Windows, déploiement et remise en service des équipements auprès des utilisateurs finaux."
+          }
+        }
+      },
+      education: {
+        eyebrow: 'Formations',
+        title: 'Parcours académique',
+        items: {
+          engineering: {
+            role: 'Cycle Ingénieur Informatique & Réseaux',
+            meta: 'CPE Lyon · 2024 — 2027',
+            description:
+              "Programme en alternance couvrant intelligence artificielle, mathématiques avancées, développement front et back-end, DevOps, ingénierie logicielle, systèmes et cybersécurité."
+          },
+          but: {
+            role: 'BUT Informatique · Parcours Développement',
+            meta: 'IUT de Dijon · 2021 — 2024',
+            description:
+              'Bases solides en développement logiciel, modélisation de bases de données, gestion de projet, cybersécurité, troisième année en alternance.'
+          },
+          highschool: {
+            role: 'Baccalauréat Technologique STI2D · option SIN',
+            meta: 'Lycée Victor Bérard · 2018 — 2021',
+            description:
+              "Spécialisation en systèmes d'information numériques, électronique et premières applications logicielles orientées systèmes embarqués."
+          }
+        }
+      },
+      contact: {
+        eyebrow: 'Contact',
+        title: "N'hésitez pas à me contacter !",
+        avatarAlt: 'Avatar de Hugo Rodrigues',
+        intro: 'Retrouvez-moi ici :',
+        linkedin: 'Profil LinkedIn',
+        github: 'Profil GitHub',
+        email: 'Envoyer un e-mail'
+      },
+      footer: {
+        rights: 'Tous droits réservés.',
+        backToTop: 'Retour en haut'
+      },
+      meta: {
+        description:
+          "Portfolio de Hugo Rodrigues, étudiant ingénieur à CPE Lyon et apprenti développeur logiciel chez Orange."
+      }
+    },
+    en: {
+      language: {
+        switchLabel: 'Language selector'
+      },
+      logo: {
+        alt: 'Hugo Rodrigues logo'
+      },
+      header: {
+        navToggle: 'Open menu',
+        navClose: 'Close menu'
+      },
+      nav: {
+        about: 'About',
+        skills: 'Skills',
+        projects: 'Projects',
+        experience: 'Experience',
+        education: 'Education',
+        contact: 'Contact'
+      },
+      hero: {
+        eyebrow: 'Software engineering apprentice at Orange',
+        title: 'Engineering student at CPE Lyon',
+        subtitle:
+          'Passionate about emerging technologies such as artificial intelligence, robotics, and web development, I am strengthening my software engineering foundations while preparing for a 2- to 3-month international internship in summer 2026.',
+        ctaProjects: 'Explore my projects',
+        ctaContact: 'Discuss an opportunity',
+        antennaLabel: 'Tap the robot antenna',
+        panelLeft: 'Activate left module',
+        panelCenter: 'Activate center module',
+        panelRight: 'Activate right module'
+      },
+      about: {
+        eyebrow: 'About',
+        title: 'Software engineer passionate about computing and new technologies',
+        paragraph1:
+          'Engineering student in Computer Science & Communication Networks at CPE Lyon and software developer apprentice at Orange. I direct my work toward artificial intelligence, robotics, and web development.',
+        paragraph2:
+          'Naturally curious, I explore data science and new technology trends, and I recharge through team sports: a handball player for fifteen years, I have also coached youth teams and refereed official matches.'
+      },
+      skills: {
+        eyebrow: 'Skills',
+        title: 'Technical expertise',
+        groups: {
+          languages: {
+            title: 'Languages & web',
+            items: ['Java', 'Python', 'C#', 'C', 'JavaScript, HTML/CSS, Razor']
+          },
+          databases: {
+            title: 'Databases',
+            items: ['SQL, PostgreSQL, MongoDB', 'MySQL', 'SQL Developer, Access']
+          },
+          methods: {
+            title: 'AI, modelling & methods',
+            items: [
+              'Software architecture, DevOps, Embedded systems & IoT',
+              'Project management, Economics, Law',
+              'UML, LDM, MVP, normalization, relational algebra'
+            ]
+          }
+        }
+      },
+      projects: {
+        eyebrow: 'Projects',
+        title: 'Selected work',
+        cta: 'View all projects',
+        cards: {
+          job: {
+            description:
+              'Application to track my job applications, organize contacts, follow-ups, and deadlines from a clear interface accessible on desktop and mobile.',
+            code: 'Source',
+            more: 'Learn more'
+          },
+          python: {
+            description:
+              'Personal repository documenting my journey through Python fundamentals, data structures, algorithms, and object-oriented programming with progressive examples.',
+            code: 'Source',
+            more: 'Learn more'
+          },
+          iot: {
+            description:
+              'Android app built at CPE Lyon to display live sensor data via UDP, select a remote server, and visualize the measurements directly from the mobile application.',
+            code: 'Source',
+            more: 'Learn more'
+          }
+        }
+      },
+      experience: {
+        eyebrow: 'Experience',
+        title: 'Professional path',
+        items: {
+          orange: {
+            role: 'Software developer apprentice',
+            meta: 'Orange · Lyon · 2024 — 2027',
+            description:
+              'Designing and building a new REST API, integrating partner services, automating enrichment and error handling, writing unit and integration tests (JUnit, Mockito, Castle Mock), and applying Agile best practices.'
+          },
+          kardham: {
+            role: 'Software developer apprentice',
+            meta: 'Kardham Digital · Dijon · 2023 — 2024',
+            description:
+              'Added new features to internal applications, resolved issues and maintained codebases, and designed business dashboards using Blazor and Enedis APIs.'
+          },
+          tech2023: {
+            role: 'IT technician (Temporary)',
+            meta: 'La Pierrette S.A. · Switzerland · Jul 2023 — Aug 2023',
+            description:
+              'Summer assignment within the IT department: installed and commissioned hardware, prepared user workstations, and deployed software updates.'
+          },
+          intern: {
+            role: 'Software developer intern',
+            meta: 'La Pierrette S.A. · Switzerland · May 2023 — Jun 2023',
+            description:
+              'Designed an in-house contact management application ready for deployment, built with C# / WPF and a SQL database.'
+          },
+          tech2022: {
+            role: 'IT technician (Temporary)',
+            meta: 'La Pierrette S.A. · Switzerland · Jul 2022 — Aug 2022',
+            description:
+              'Provided technical support and workstation preparation: wrote installation procedures, configured Windows, deployed devices, and helped end users get back up and running.'
+          }
+        }
+      },
+      education: {
+        eyebrow: 'Education',
+        title: 'Academic background',
+        items: {
+          engineering: {
+            role: 'Engineering cycle in Computer Science & Networks',
+            meta: 'CPE Lyon · 2024 — 2027',
+            description:
+              'Work-study program covering artificial intelligence, advanced mathematics, front- and back-end development, DevOps, software engineering, systems, and cybersecurity.'
+          },
+          but: {
+            role: 'BSc in Computer Science · Development track',
+            meta: 'IUT of Dijon · 2021 — 2024',
+            description:
+              'Solid foundation in software development, database modelling, project management, cybersecurity, and a third year in an apprenticeship.'
+          },
+          highschool: {
+            role: 'Technological Baccalaureate STI2D · SIN option',
+            meta: 'Lycée Victor Bérard · 2018 — 2021',
+            description:
+              'Specialized in digital information systems, electronics, and early software projects focused on embedded systems.'
+          }
+        }
+      },
+      contact: {
+        eyebrow: 'Contact',
+        title: 'Feel free to reach out!',
+        avatarAlt: 'Portrait of Hugo Rodrigues',
+        intro: 'Find me here:',
+        linkedin: 'LinkedIn profile',
+        github: 'GitHub profile',
+        email: 'Send an email'
+      },
+      footer: {
+        rights: 'All rights reserved.',
+        backToTop: 'Back to top'
+      },
+      meta: {
+        description:
+          'Portfolio of Hugo Rodrigues, CPE Lyon engineering student and software developer apprentice at Orange.'
+      }
+    }
+  };
+
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
   const lerp = (start, end, amount) => start + (end - start) * amount;
   const shouldReduceMotion = () => Boolean(state.prefersReducedMotion?.matches);
+
+  const resolveTranslation = (lang, key) => {
+    if (!lang || !key || !translations[lang]) {
+      return undefined;
+    }
+
+    return key.split('.').reduce((accumulator, part) => {
+      if (accumulator === undefined || accumulator === null) {
+        return undefined;
+      }
+      return accumulator[part];
+    }, translations[lang]);
+  };
+
+  const updateNavToggleLabel = (navToggle, isOpen) => {
+    if (!navToggle) {
+      return;
+    }
+    const key = isOpen ? 'header.navClose' : 'header.navToggle';
+    const label = resolveTranslation(state.language, key);
+    if (typeof label === 'string' && label.trim().length > 0) {
+      navToggle.setAttribute('aria-label', label);
+    }
+  };
+
+  const applyTranslations = (lang) => {
+    const textElements = document.querySelectorAll('[data-i18n]');
+    textElements.forEach((element) => {
+      const key = element.dataset.i18n;
+      const translation = resolveTranslation(lang, key);
+      if (translation === undefined) {
+        return;
+      }
+
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.value = translation;
+        return;
+      }
+
+      element.textContent = translation;
+    });
+
+    const attrElements = document.querySelectorAll('[data-i18n-attr]');
+    attrElements.forEach((element) => {
+      const mapping = element.dataset.i18nAttr;
+      if (!mapping) {
+        return;
+      }
+
+      mapping
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const [attr, path] = entry.split(':').map((part) => part.trim());
+          if (!attr || !path) {
+            return;
+          }
+
+          const translation = resolveTranslation(lang, path);
+          if (translation !== undefined) {
+            element.setAttribute(attr, translation);
+          }
+        });
+    });
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      const description = resolveTranslation(lang, 'meta.description');
+      if (typeof description === 'string' && description.trim().length > 0) {
+        metaDescription.setAttribute('content', description);
+      }
+    }
+  };
+
+  const syncLanguageSwitch = (lang) => {
+    const switchElement = document.querySelector(selectors.languageSwitch);
+    if (!switchElement) {
+      return;
+    }
+
+    const options = switchElement.querySelectorAll(selectors.languageOption);
+    options.forEach((option) => {
+      const isActive = option.dataset.language === lang;
+      option.classList.toggle('is-active', isActive);
+      option.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
+  const persistLanguage = (lang) => {
+    try {
+      window.localStorage.setItem('portfolio-language', lang);
+    } catch (error) {
+      // Ignored: storage may be unavailable (private mode, disabled storage, etc.)
+    }
+  };
+
+  const getPersistedLanguage = () => {
+    try {
+      const stored = window.localStorage.getItem('portfolio-language');
+      if (stored && translations[stored]) {
+        return stored;
+      }
+    } catch (error) {
+      // Ignore storage read errors
+    }
+    return undefined;
+  };
+
+  const detectBrowserLanguage = () => {
+    const navigatorLang = navigator.language || navigator.userLanguage;
+    if (!navigatorLang) {
+      return undefined;
+    }
+
+    const shortCode = navigatorLang.slice(0, 2).toLowerCase();
+    return translations[shortCode] ? shortCode : undefined;
+  };
+
+  const setLanguage = (lang, { persist = true } = {}) => {
+    if (!translations[lang]) {
+      return;
+    }
+
+    state.language = lang;
+    document.documentElement.setAttribute('lang', lang);
+    applyTranslations(lang);
+    syncLanguageSwitch(lang);
+
+    const navToggle = document.querySelector(selectors.navToggle);
+    updateNavToggleLabel(navToggle, state.navOpen);
+
+    if (persist) {
+      persistLanguage(lang);
+    }
+  };
+
+  const initLanguageSwitch = () => {
+    const switchElement = document.querySelector(selectors.languageSwitch);
+    if (!switchElement) {
+      return;
+    }
+
+    const options = switchElement.querySelectorAll(selectors.languageOption);
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const lang = option.dataset.language;
+        if (lang && lang !== state.language) {
+          setLanguage(lang);
+        }
+      });
+
+      option.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const lang = option.dataset.language;
+          if (lang && lang !== state.language) {
+            setLanguage(lang);
+          }
+        }
+      });
+    });
+
+    const preferred = getPersistedLanguage() || detectBrowserLanguage() || state.language;
+    setLanguage(preferred, { persist: false });
+  };
 
   const toggleNavigation = () => {
     const navToggle = document.querySelector(selectors.navToggle);
@@ -34,6 +534,7 @@ const portfolioApp = (() => {
       navToggle.classList.toggle('is-active', state.navOpen);
       nav.classList.toggle('is-open', state.navOpen);
       document.body.classList.toggle('nav-open', state.navOpen);
+      updateNavToggleLabel(navToggle, state.navOpen);
     };
 
     navToggle.addEventListener('click', () => toggleNav());
@@ -53,6 +554,8 @@ const portfolioApp = (() => {
         toggleNav(false);
       }
     });
+
+    updateNavToggleLabel(navToggle, state.navOpen);
   };
 
   const updateCurrentYear = () => {
@@ -484,6 +987,7 @@ const portfolioApp = (() => {
   };
 
   const init = () => {
+    initLanguageSwitch();
     toggleNavigation();
     updateCurrentYear();
     watchHeaderScroll();
