@@ -41,7 +41,7 @@ const portfolioApp = (() => {
         contact: 'Contact'
       },
       hero: {
-        eyebrow: 'Apprenti développeur logiciel chez Orange',
+        eyebrow: 'Apprenti développeur ingénieur chez Orange',
         title: 'Étudiant ingénieur à CPE Lyon',
         subtitle:
           "Passionné par les technologies émergentes, notamment l'intelligence artificielle, la robotique et le développement web, je consolide mes bases en ingénierie logicielle tout en préparant un stage international de 2 à 3 mois pour l'été 2026.",
@@ -205,8 +205,8 @@ const portfolioApp = (() => {
         contact: 'Contact'
       },
       hero: {
-        eyebrow: 'Software engineering apprentice at Orange',
-        title: 'Engineering student at CPE Lyon',
+        eyebrow: 'Software engineer apprentice at Orange',
+        title: 'Engineer student at CPE Lyon',
         subtitle:
           'Passionate about emerging technologies such as artificial intelligence, robotics, and web development, I am strengthening my software engineering foundations while preparing for a 2- to 3-month international internship in summer 2026.',
         ctaProjects: 'Explore my projects',
