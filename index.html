@@ -27,21 +27,33 @@
     <header class="site-header" data-header>
       <div class="container">
         <a class="site-logo" href="#hero">
-          <img src="assets/images/HugoGrandeTailleLogo.png" alt="Logo Hugo Rodrigues" />
+          <img src="assets/images/HugoGrandeTailleLogo.png" alt="Logo Hugo Rodrigues" data-i18n-attr="alt:logo.alt" />
         </a>
-        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" data-nav-toggle>
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" data-nav-toggle data-i18n-attr="aria-label:header.navToggle">
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
         </button>
         <nav class="site-nav" data-site-nav>
           <ul class="site-nav__list">
-            <li><a class="site-nav__link" href="#about">À propos</a></li>
-            <li><a class="site-nav__link" href="#skills">Compétences</a></li>
-            <li><a class="site-nav__link" href="#projects">Projets</a></li>
-            <li><a class="site-nav__link" href="#experience">Expériences</a></li>
-            <li><a class="site-nav__link" href="#education">Formations</a></li>
-            <li><a class="site-nav__link" href="#contact">Contact</a></li>
+            <li><a class="site-nav__link" href="#about" data-i18n="nav.about">À propos</a></li>
+            <li><a class="site-nav__link" href="#skills" data-i18n="nav.skills">Compétences</a></li>
+            <li><a class="site-nav__link" href="#projects" data-i18n="nav.projects">Projets</a></li>
+            <li><a class="site-nav__link" href="#experience" data-i18n="nav.experience">Expériences</a></li>
+            <li><a class="site-nav__link" href="#education" data-i18n="nav.education">Formations</a></li>
+            <li><a class="site-nav__link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+            <li class="site-nav__language">
+              <div
+                class="language-switch"
+                role="group"
+                aria-label="Sélecteur de langue"
+                data-language-switch
+                data-i18n-attr="aria-label:language.switchLabel"
+              >
+                <button class="language-switch__option is-active" type="button" data-language="fr">FR</button>
+                <button class="language-switch__option" type="button" data-language="en">EN</button>
+              </div>
+            </li>
           </ul>
         </nav>
       </div>
@@ -51,16 +63,16 @@
       <section class="hero" id="hero">
         <div class="container hero__content">
           <div class="hero__intro">
-            <p class="hero__eyebrow">Apprenti développeur logiciel chez Orange</p>
-            <h1 class="hero__title">Étudiant ingénieur à CPE Lyon</h1>
-            <p class="hero__subtitle">
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">Apprenti développeur logiciel chez Orange</p>
+            <h1 class="hero__title" data-i18n="hero.title">Étudiant ingénieur à CPE Lyon</h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
               Passionné par les technologies émergentes, notamment l'intelligence artificielle, la
               robotique et le développement web, je consolide mes bases en ingénierie logicielle tout en
               préparant un stage international de 2 à 3 mois pour l'été 2026.
             </p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#projects">Découvrir mes projets</a>
-              <a class="btn btn--ghost" href="#contact">Discuter d'une opportunité</a>
+              <a class="btn btn--primary" href="#projects" data-i18n="hero.ctaProjects">Découvrir mes projets</a>
+              <a class="btn btn--ghost" href="#contact" data-i18n="hero.ctaContact">Discuter d'une opportunité</a>
             </div>
           </div>
           <div class="hero__visual">
@@ -72,6 +84,7 @@
                   role="button"
                   tabindex="0"
                   aria-label="Taper sur l'antenne du robot"
+                  data-i18n-attr="aria-label:hero.antennaLabel"
                 >
                   <span></span>
                 </div>
@@ -103,18 +116,21 @@
                     type="button"
                     data-panel-button="left"
                     aria-label="Activer le module gauche"
+                    data-i18n-attr="aria-label:hero.panelLeft"
                   ></button>
                   <button
                     class="hero-bot__panel-light hero-bot__panel-light--accent"
                     type="button"
                     data-panel-button="center"
                     aria-label="Activer le module central"
+                    data-i18n-attr="aria-label:hero.panelCenter"
                   ></button>
                   <button
                     class="hero-bot__panel-light"
                     type="button"
                     data-panel-button="right"
                     aria-label="Activer le module droit"
+                    data-i18n-attr="aria-label:hero.panelRight"
                   ></button>
                 </div>
               </div>
@@ -137,16 +153,16 @@
       <section class="section" id="about" data-reveal>
         <div class="container section__grid">
           <div>
-            <p class="section__eyebrow">À propos</p>
-            <h2 class="section__title">Ingénieur logiciel passionné par l'Informatique et les nouvelles technologies</h2>
+            <p class="section__eyebrow" data-i18n="about.eyebrow">À propos</p>
+            <h2 class="section__title" data-i18n="about.title">Ingénieur logiciel passionné par l'Informatique et les nouvelles technologies</h2>
           </div>
           <div class="section__content">
-            <p>
+            <p data-i18n="about.paragraph1">
               Etudiant ingénieur en Informatique & Réseaux de Communication à
               CPE Lyon et apprenti développeur logiciel chez Orange. J'oriente mes travaux vers
               l'intelligence artificielle, la robotique et le développement web.
             </p>
-            <p>
+            <p data-i18n="about.paragraph2">
               Curieux de nature, j'explore la data science et les nouvelles tendances technologiques,
               mais je me ressource surtout à travers le sport collectif : handballeur depuis quinze ans,
               j'ai aussi eu la chance de coacher de jeunes équipes et d'arbitrer des rencontres
@@ -158,33 +174,33 @@
 
       <section class="section section--alt" id="skills" data-reveal>
         <div class="container">
-          <p class="section__eyebrow">Compétences</p>
-          <h2 class="section__title">Mes connaissances techniques</h2>
+          <p class="section__eyebrow" data-i18n="skills.eyebrow">Compétences</p>
+          <h2 class="section__title" data-i18n="skills.title">Mes connaissances techniques</h2>
           <div class="skills">
             <article class="skills__group" data-tilt-card data-reveal data-tilt-max="10">
-              <h3 class="skills__title">Langages & web</h3>
+              <h3 class="skills__title" data-i18n="skills.groups.languages.title">Langages & web</h3>
               <ul class="skills__list">
-                <li>Java</li>
-                <li>Python</li>
-                <li>C#</li>
-                <li>C</li>
-                <li>JavaScript, HTML/CSS, Razor</li>
+                <li data-i18n="skills.groups.languages.items.0">Java</li>
+                <li data-i18n="skills.groups.languages.items.1">Python</li>
+                <li data-i18n="skills.groups.languages.items.2">C#</li>
+                <li data-i18n="skills.groups.languages.items.3">C</li>
+                <li data-i18n="skills.groups.languages.items.4">JavaScript, HTML/CSS, Razor</li>
               </ul>
             </article>
             <article class="skills__group" data-tilt-card data-reveal data-tilt-max="10" data-reveal-delay="80">
-              <h3 class="skills__title">Bases de données</h3>
+              <h3 class="skills__title" data-i18n="skills.groups.databases.title">Bases de données</h3>
               <ul class="skills__list">
-                <li>SQL, PostgreSQL, MongoDB</li>
-                <li>MySQL</li>
-                <li>SQL Developer, Access</li>
+                <li data-i18n="skills.groups.databases.items.0">SQL, PostgreSQL, MongoDB</li>
+                <li data-i18n="skills.groups.databases.items.1">MySQL</li>
+                <li data-i18n="skills.groups.databases.items.2">SQL Developer, Access</li>
               </ul>
             </article>
             <article class="skills__group" data-tilt-card data-reveal data-tilt-max="10" data-reveal-delay="160">
-              <h3 class="skills__title">IA, modélisation & méthodes</h3>
+              <h3 class="skills__title" data-i18n="skills.groups.methods.title">IA, modélisation & méthodes</h3>
               <ul class="skills__list">
-                <li>Architecture logicielle, DevOps, Systèmes embarqués & IoT</li>
-                <li>Gestion de projet, Économie, Droit</li>
-                <li>UML, MLD, MVP, normalisation, algèbre relationnelle</li>
+                <li data-i18n="skills.groups.methods.items.0">Architecture logicielle, DevOps, Systèmes embarqués & IoT</li>
+                <li data-i18n="skills.groups.methods.items.1">Gestion de projet, Économie, Droit</li>
+                <li data-i18n="skills.groups.methods.items.2">UML, MLD, MVP, normalisation, algèbre relationnelle</li>
                 <!--<li>Machine learning basics, classification, model evaluation</li>-->
               </ul>
             </article>
@@ -196,14 +212,15 @@
         <div class="container">
           <div class="section__header">
             <div>
-              <p class="section__eyebrow">Projets</p>
-              <h2 class="section__title">Sélection de réalisations</h2>
+              <p class="section__eyebrow" data-i18n="projects.eyebrow">Projets</p>
+              <h2 class="section__title" data-i18n="projects.title">Sélection de réalisations</h2>
             </div>
             <a
               class="section__cta"
               href="https://github.com/Hugo-Rodrigues-Dev"
               target="_blank"
               rel="noreferrer"
+              data-i18n="projects.cta"
             >
               Voir tous les projets
             </a>
@@ -212,7 +229,7 @@
             <article class="project-card" data-tilt-card data-reveal data-tilt-max="7">
               <div class="project-card__meta">
                 <h3 class="project-card__title">Job Application Tracking Spreadsheet</h3>
-                <p class="project-card__description">
+                <p class="project-card__description" data-i18n="projects.cards.job.description">
                   Application pour suivre mes candidatures, organiser les contacts, les relances et les
                   échéances depuis une interface claire accessible sur desktop comme mobile.
                 </p>
@@ -228,17 +245,24 @@
                   href="https://github.com/Hugo-Rodrigues-Dev/job-application-tracking-spreadsheet"
                   target="_blank"
                   rel="noreferrer"
+                  data-i18n="projects.cards.job.code"
                 >
                   Code
                 </a>
-                <a class="btn btn--ghost btn--sm" href="projects/job-application-tracker.html">Voir plus</a>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="projects/job-application-tracker.html"
+                  data-i18n="projects.cards.job.more"
+                >
+                  Voir plus
+                </a>
               </div>
             </article>
 
             <article class="project-card" data-tilt-card data-reveal data-tilt-max="7" data-reveal-delay="120">
               <div class="project-card__meta">
                 <h3 class="project-card__title">Python Learning Repository</h3>
-                <p class="project-card__description">
+                <p class="project-card__description" data-i18n="projects.cards.python.description">
                   Dépôt personnel où je documente mon parcours sur les fondamentaux Python, les structures
                   de données, les algorithmes et la programmation orientée objet, avec des exemples
                   progressifs.
@@ -255,17 +279,24 @@
                   href="https://github.com/Hugo-Rodrigues-Dev/python-learning"
                   target="_blank"
                   rel="noreferrer"
+                  data-i18n="projects.cards.python.code"
                 >
                   Code
                 </a>
-                <a class="btn btn--ghost btn--sm" href="projects/python-learning.html">Voir plus</a>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="projects/python-learning.html"
+                  data-i18n="projects.cards.python.more"
+                >
+                  Voir plus
+                </a>
               </div>
             </article>
 
             <article class="project-card" data-tilt-card data-reveal data-tilt-max="7" data-reveal-delay="220">
               <div class="project-card__meta">
                 <h3 class="project-card__title">IoT Android App</h3>
-                <p class="project-card__description">
+                <p class="project-card__description" data-i18n="projects.cards.iot.description">
                   Application Android réalisée à CPE Lyon pour afficher en temps réel des données de
                   capteurs via UDP, choisir un serveur distant et visualiser graphiquement les mesures
                   depuis l'application mobile.
@@ -282,10 +313,17 @@
                   href="https://github.com/Hugo-Rodrigues-Dev/iot-android-app"
                   target="_blank"
                   rel="noreferrer"
+                  data-i18n="projects.cards.iot.code"
                 >
                   Code
                 </a>
-                <a class="btn btn--ghost btn--sm" href="projects/iot-android-app.html">Voir plus</a>
+                <a
+                  class="btn btn--ghost btn--sm"
+                  href="projects/iot-android-app.html"
+                  data-i18n="projects.cards.iot.more"
+                >
+                  Voir plus
+                </a>
               </div>
             </article>
           </div>
@@ -295,16 +333,16 @@
       <section class="section section--alt" id="experience" data-reveal>
         <div class="container section__grid">
           <div>
-            <p class="section__eyebrow">Expériences</p>
-            <h2 class="section__title">Parcours professionnel</h2>
+            <p class="section__eyebrow" data-i18n="experience.eyebrow">Expériences</p>
+            <h2 class="section__title" data-i18n="experience.title">Parcours professionnel</h2>
           </div>
           <div class="timeline">
             <article class="timeline__item" data-reveal>
               <header class="timeline__header">
-                <h3 class="timeline__role">Apprenti développeur logiciel</h3>
-                <p class="timeline__meta">Orange · Lyon · 2024 — 2027</p>
+                <h3 class="timeline__role" data-i18n="experience.items.orange.role">Apprenti développeur logiciel</h3>
+                <p class="timeline__meta" data-i18n="experience.items.orange.meta">Orange · Lyon · 2024 — 2027</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="experience.items.orange.description">
                 Conception et développement d'une nouvelle API REST, intégration de services partenaires,
                 automatisation de l'enrichissement et de la gestion des erreurs, rédaction de tests unitaires
                 et d'intégration (JUnit, Mockito, Castle Mock) et application des bonnes pratiques Agile.
@@ -312,10 +350,10 @@
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="80">
               <header class="timeline__header">
-                <h3 class="timeline__role">Apprenti développeur logiciel</h3>
-                <p class="timeline__meta">Kardham Digital · Dijon · 2023 — 2024</p>
+                <h3 class="timeline__role" data-i18n="experience.items.kardham.role">Apprenti développeur logiciel</h3>
+                <p class="timeline__meta" data-i18n="experience.items.kardham.meta">Kardham Digital · Dijon · 2023 — 2024</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="experience.items.kardham.description">
                 Ajout de nouvelles fonctionnalités à des applications internes,
                 résolution d'anomalies et maintenance applicative, conception de dashboards métier avec
                 Blazor et les APIs d'Enedis.
@@ -323,30 +361,30 @@
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="140">
               <header class="timeline__header">
-                <h3 class="timeline__role">Technicien IT (Intérim)</h3>
-                <p class="timeline__meta">La Pierrette S.A. · Suisse · juil. 2023 — août 2023</p>
+                <h3 class="timeline__role" data-i18n="experience.items.tech2023.role">Technicien IT (Intérim)</h3>
+                <p class="timeline__meta" data-i18n="experience.items.tech2023.meta">La Pierrette S.A. · Suisse · juil. 2023 — août 2023</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="experience.items.tech2023.description">
                 Mission estivale au sein du service informatique : installation et mise en service du
                 matériel, préparation des postes utilisateurs et déploiement des mises à jour logicielles.
               </p>
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="200">
               <header class="timeline__header">
-                <h3 class="timeline__role">Développeur logiciel (Stage)</h3>
-                <p class="timeline__meta">La Pierrette S.A. · Suisse · mai 2023 — juin 2023</p>
+                <h3 class="timeline__role" data-i18n="experience.items.intern.role">Développeur logiciel (Stage)</h3>
+                <p class="timeline__meta" data-i18n="experience.items.intern.meta">La Pierrette S.A. · Suisse · mai 2023 — juin 2023</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="experience.items.intern.description">
                 Conception d'une application de gestion de contacts internes, prête pour le déploiement,
                 construite en C# / WPF avec une base de données SQL.
               </p>
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="260">
               <header class="timeline__header">
-                <h3 class="timeline__role">Technicien IT (Intérim)</h3>
-                <p class="timeline__meta">La Pierrette S.A. · Suisse · juil. 2022 — août 2022</p>
+                <h3 class="timeline__role" data-i18n="experience.items.tech2022.role">Technicien IT (Intérim)</h3>
+                <p class="timeline__meta" data-i18n="experience.items.tech2022.meta">La Pierrette S.A. · Suisse · juil. 2022 — août 2022</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="experience.items.tech2022.description">
                 Support technique et préparation de postes : rédaction de procédures d'installation,
                 configuration de Windows, déploiement et remise en service des équipements auprès des
                 utilisateurs finaux.
@@ -359,36 +397,36 @@
       <section class="section" id="education" data-reveal>
         <div class="container section__grid">
           <div>
-            <p class="section__eyebrow">Formations</p>
-            <h2 class="section__title">Parcours académique</h2>
+            <p class="section__eyebrow" data-i18n="education.eyebrow">Formations</p>
+            <h2 class="section__title" data-i18n="education.title">Parcours académique</h2>
           </div>
           <div class="timeline">
             <article class="timeline__item" data-reveal>
               <header class="timeline__header">
-                <h3 class="timeline__role">Cycle Ingénieur Informatique & Réseaux</h3>
-                <p class="timeline__meta">CPE Lyon · 2024 — 2027</p>
+                <h3 class="timeline__role" data-i18n="education.items.engineering.role">Cycle Ingénieur Informatique & Réseaux</h3>
+                <p class="timeline__meta" data-i18n="education.items.engineering.meta">CPE Lyon · 2024 — 2027</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="education.items.engineering.description">
                 Programme en alternance couvrant intelligence artificielle, mathématiques avancées,
                 développement front et back-end, DevOps, ingénierie logicielle, systèmes et cybersécurité.
               </p>
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="80">
               <header class="timeline__header">
-                <h3 class="timeline__role">BUT Informatique · Parcours Développement</h3>
-                <p class="timeline__meta">IUT de Dijon · 2021 — 2024</p>
+                <h3 class="timeline__role" data-i18n="education.items.but.role">BUT Informatique · Parcours Développement</h3>
+                <p class="timeline__meta" data-i18n="education.items.but.meta">IUT de Dijon · 2021 — 2024</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="education.items.but.description">
                 Bases solides en développement logiciel, modélisation de bases de données, gestion de
                 projet, cybersécurité, troisième année en alternance.
               </p>
             </article>
             <article class="timeline__item" data-reveal data-reveal-delay="160">
               <header class="timeline__header">
-                <h3 class="timeline__role">Baccalauréat Technologique STI2D · option SIN</h3>
-                <p class="timeline__meta">Lycée Victor Bérard · 2018 — 2021</p>
+                <h3 class="timeline__role" data-i18n="education.items.highschool.role">Baccalauréat Technologique STI2D · option SIN</h3>
+                <p class="timeline__meta" data-i18n="education.items.highschool.meta">Lycée Victor Bérard · 2018 — 2021</p>
               </header>
-              <p class="timeline__description">
+              <p class="timeline__description" data-i18n="education.items.highschool.description">
                 Spécialisation en systèmes d'information numériques, 
                 électronique et premières applications logicielles orientées systèmes embarqués.
               </p>
@@ -400,16 +438,17 @@
       <section class="section" id="contact" data-reveal>
         <div class="container section__grid">
           <div>
-            <p class="section__eyebrow">Contact</p>
-            <h2 class="section__title">N'hésitez pas à me contacter !</h2>
+            <p class="section__eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 class="section__title" data-i18n="contact.title">N'hésitez pas à me contacter !</h2>
           </div>
           <div class="contact" data-reveal data-reveal-delay="80">
             <img
               class="contact__avatar"
               src="assets/images/Avatar.png"
               alt="Avatar de Hugo Rodrigues"
+              data-i18n-attr="alt:contact.avatarAlt"
             />
-            <p class="contact__intro">Retrouvez-moi ici :</p>
+            <p class="contact__intro" data-i18n="contact.intro">Retrouvez-moi ici :</p>
             <ul class="contact__links">
               <li>
                 <a
@@ -418,6 +457,7 @@
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Profil LinkedIn"
+                  data-i18n-attr="aria-label:contact.linkedin"
                 >
                   <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -433,6 +473,7 @@
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Profil GitHub"
+                  data-i18n-attr="aria-label:contact.github"
                 >
                   <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -442,7 +483,12 @@
                 </a>
               </li>
               <li>
-                <a class="contact__link" href="mailto:rodrigueshugo39@gmail.com" aria-label="Envoyer un e-mail">
+                <a
+                  class="contact__link"
+                  href="mailto:rodrigueshugo39@gmail.com"
+                  aria-label="Envoyer un e-mail"
+                  data-i18n-attr="aria-label:contact.email"
+                >
                   <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M3.75 5.25h16.5a1.5 1.5 0 0 1 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5Zm8.25 6.67 7.5-4.92H4.5l7.5 4.92Zm0 1.26L4.5 8.25v9h15v-9l-7.5 4.93Z"
@@ -458,8 +504,11 @@
 
     <footer class="site-footer">
       <div class="container site-footer__minimal">
-        <p>© <span data-current-year></span> Hugo Rodrigues. Tous droits réservés.</p>
-        <a class="site-footer__top" href="#hero">Retour en haut</a>
+        <p>
+          © <span data-current-year></span> Hugo Rodrigues.
+          <span data-i18n="footer.rights">Tous droits réservés.</span>
+        </p>
+        <a class="site-footer__top" href="#hero" data-i18n="footer.backToTop">Retour en haut</a>
       </div>
     </footer>
 
