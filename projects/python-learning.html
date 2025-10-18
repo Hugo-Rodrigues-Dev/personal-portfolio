@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Python Learning Repository | Portfolio</title>
+    <title data-i18n="projectsDetail.python.titleTag">Python Learning Repository | Portfolio</title>
     <meta
       name="description"
       content="Fiche détaillée du dépôt Python Learning Repository : progression, structures de données et algorithmes étudiés."
+      data-i18n-attr="content:projectsDetail.python.metaDescription"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,14 +22,30 @@
   <body class="project-page">
     <header class="project-header">
       <div class="container project-header__inner">
-        <nav class="project-breadcrumb" aria-label="Fil d'Ariane">
-          <a href="../index.html">Accueil</a>
+        <nav
+          class="project-breadcrumb"
+          aria-label="Fil d'Ariane"
+          data-i18n-attr="aria-label:projectsDetail.common.breadcrumbLabel"
+        >
+          <a href="../index.html" data-i18n="projectsDetail.common.breadcrumb.home">Accueil</a>
           <span class="project-breadcrumb__separator">/</span>
-          <a href="../index.html#projects">Projets</a>
+          <a href="../index.html#projects" data-i18n="projectsDetail.common.breadcrumb.projects">Projets</a>
           <span class="project-breadcrumb__separator">/</span>
-          <span>Python Learning Repository</span>
+          <span data-i18n="projectsDetail.python.breadcrumb.current">Python Learning Repository</span>
         </nav>
-        <span>Fiche projet</span>
+        <div class="project-header__extras">
+          <span data-i18n="projectsDetail.common.headerLabel">Fiche projet</span>
+          <div
+            class="language-switch"
+            role="group"
+            aria-label="Sélecteur de langue"
+            data-language-switch
+            data-i18n-attr="aria-label:language.switchLabel"
+          >
+            <button class="language-switch__option is-active" type="button" data-language="fr">FR</button>
+            <button class="language-switch__option" type="button" data-language="en">EN</button>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -36,12 +53,14 @@
       <section class="project-hero">
         <div class="container project-hero__inner">
           <div class="project-hero__card">
-            <h1 class="project-hero__title">Python Learning Repository</h1>
+            <h1 class="project-hero__title" data-i18n="projectsDetail.python.hero.title">
+              Python Learning Repository
+            </h1>
             <div class="project-hero__meta">
-              <span>Auto-formation</span>
-              <span>Algorithmique &amp; data</span>
+              <span data-i18n="projectsDetail.python.hero.meta.0">Auto-formation</span>
+              <span data-i18n="projectsDetail.python.hero.meta.1">Algorithmique &amp; data</span>
             </div>
-            <p class="project-hero__summary">
+            <p class="project-hero__summary" data-i18n="projectsDetail.python.hero.summary">
               Un dépôt vivant où je documente mon apprentissage de Python : des fondations à l'algorithmique
               avancée, avec scripts commentés, checklists de progression et projets inspirés de cas réels.
             </p>
@@ -57,13 +76,20 @@
                 href="https://github.com/Hugo-Rodrigues-Dev/python-learning"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="projectsDetail.python.hero.ctaCode"
               >
                 Code source
               </a>
-              <a class="btn btn--ghost btn--sm" href="../index.html#projects">Retour au portfolio</a>
+              <a
+                class="btn btn--ghost btn--sm"
+                href="../index.html#projects"
+                data-i18n="projectsDetail.python.hero.ctaBack"
+              >
+                Retour au portfolio
+              </a>
             </div>
           </div>
-          <div class="project-hero__media">
+          <div class="project-hero__media" data-i18n="projectsDetail.python.hero.media">
             Diagrammes et notebooks interactifs à venir (comparaison de structures de données, benchmarks).
           </div>
         </div>
@@ -71,30 +97,38 @@
 
       <section class="project-section">
         <div class="container">
-          <h2 class="project-section__title">Structure du dépôt</h2>
-          <p class="project-section__intro">
+          <h2 class="project-section__title" data-i18n="projectsDetail.python.structure.title">
+            Structure du dépôt
+          </h2>
+          <p class="project-section__intro" data-i18n="projectsDetail.python.structure.intro">
             Pour garder une vision claire de ma progression, chaque thème est isolé dans un dossier dédié, avec
             des exemples, une synthèse et des exercices. Le fichier <code>progress.md</code> sert de feuille de
             route globale.
           </p>
           <div class="project-section__grid">
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Bases</h3>
-              <p class="project-highlight__content">
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.structure.basics.title">
+                Bases
+              </h3>
+              <p class="project-highlight__content" data-i18n="projectsDetail.python.structure.basics.body">
                 Syntaxe, structures de contrôle, fonctions (args/kwargs, closures, lambdas), gestion des
                 erreurs, fichiers et tests unitaires.
               </p>
             </article>
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Structures de données</h3>
-              <p class="project-highlight__content">
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.structure.data.title">
+                Structures de données
+              </h3>
+              <p class="project-highlight__content" data-i18n="projectsDetail.python.structure.data.body">
                 Listes, tuples, dictionnaires, sets, mais aussi implémentations maison : listes chaînées,
                 piles, files, tables de hachage, tas binaires et tries.
               </p>
             </article>
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Algorithmes</h3>
-              <p class="project-highlight__content">
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.structure.algorithms.title">
+                Algorithmes
+              </h3>
+              <p class="project-highlight__content" data-i18n="projectsDetail.python.structure.algorithms.body">
                 Tri, recherche, récursion, backtracking, fenêtre glissante, deux pointeurs et premières notions
                 de graphes en préparation de la suite.
               </p>
@@ -105,16 +139,22 @@
 
       <section class="project-section">
         <div class="container">
-          <h2 class="project-section__title">Ce que j'en retire</h2>
+          <h2 class="project-section__title" data-i18n="projectsDetail.python.takeaways.title">
+            Ce que j'en retire
+          </h2>
           <div class="project-section__grid">
             <div>
               <ul class="project-list">
-                <li>Renforcer ma pratique quotidienne du langage en l'appliquant à des problèmes concrets.</li>
-                <li>
+                <li data-i18n="projectsDetail.python.takeaways.items.0">
+                  Renforcer ma pratique quotidienne du langage en l'appliquant à des problèmes concrets.
+                </li>
+                <li data-i18n="projectsDetail.python.takeaways.items.1">
                   Construire des références réutilisables pour des entretiens techniques (résolution de
                   problèmes, analyses de complexité).
                 </li>
-                <li>Préparer des mini-projets data science et automatisation avec une base solide.</li>
+                <li data-i18n="projectsDetail.python.takeaways.items.2">
+                  Préparer des mini-projets data science et automatisation avec une base solide.
+                </li>
               </ul>
             </div>
           </div>
@@ -123,35 +163,59 @@
 
       <section class="project-section">
         <div class="container">
-          <h2 class="project-section__title">Roadmap</h2>
+          <h2 class="project-section__title" data-i18n="projectsDetail.python.roadmap.title">Roadmap</h2>
           <div class="project-section__grid">
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Phase 5 — Programmation orientée objet</h3>
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.roadmap.phase5.title">
+                Phase 5 — Programmation orientée objet
+              </h3>
               <div class="project-highlight__content">
                 <ul class="project-list">
-                  <li>Consolider les notions de classes, objets et relations entre composantes.</li>
-                  <li>Explorer héritage, polymorphisme, encapsulation et abstraction.</li>
-                  <li>Pratiquer les méthodes spéciales pour améliorer les API (`__str__`, `__repr__`, etc.).</li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase5.items.0">
+                    Consolider les notions de classes, objets et relations entre composantes.
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase5.items.1">
+                    Explorer héritage, polymorphisme, encapsulation et abstraction.
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase5.items.2">
+                    Pratiquer les méthodes spéciales pour améliorer les API (`__str__`, `__repr__`, etc.).
+                  </li>
                 </ul>
               </div>
             </article>
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Phase 6 — Python avancé</h3>
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.roadmap.phase6.title">
+                Phase 6 — Python avancé
+              </h3>
               <div class="project-highlight__content">
                 <ul class="project-list">
-                  <li>Approfondir décorateurs, générateurs et itérateurs personnalisés.</li>
-                  <li>Revoir les compréhensions (listes, dictionnaires, ensembles) de manière intensive.</li>
-                  <li>Introduire les approches fonctionnelles (`map`/`filter`/`reduce`) et les bibliothèques standard clés (os, sys, datetime, math...).</li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase6.items.0">
+                    Approfondir décorateurs, générateurs et itérateurs personnalisés.
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase6.items.1">
+                    Revoir les compréhensions (listes, dictionnaires, ensembles) de manière intensive.
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase6.items.2">
+                    Introduire les approches fonctionnelles (`map`/`filter`/`reduce`) et les bibliothèques standard clés (os, sys, datetime, math...).
+                  </li>
                 </ul>
               </div>
             </article>
             <article class="project-highlight">
-              <h3 class="project-highlight__title">Phase 7 — Bits &amp; mathématiques</h3>
+              <h3 class="project-highlight__title" data-i18n="projectsDetail.python.roadmap.phase7.title">
+                Phase 7 — Bits &amp; mathématiques
+              </h3>
               <div class="project-highlight__content">
                 <ul class="project-list">
-                  <li>Manipuler le binaire : opérations bitwise, masques, décalages.</li>
-                  <li>Réviser les astuces mathématiques courantes (PGCD, modulo, nombres premiers).</li>
-                  <li>Préparer des projets appliqués (graphes DFS/BFS, Union-Find, Dijkstra, DP knapsack/LIS/LCS) pour ancrer ces notions.</li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase7.items.0">
+                    Manipuler le binaire : opérations bitwise, masques, décalages.
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase7.items.1">
+                    Réviser les astuces mathématiques courantes (PGCD, modulo, nombres premiers).
+                  </li>
+                  <li data-i18n="projectsDetail.python.roadmap.phase7.items.2">
+                    Préparer des projets appliqués (graphes DFS/BFS, Union-Find, Dijkstra, DP knapsack/LIS/LCS) pour ancrer ces notions.
+                  </li>
                 </ul>
               </div>
             </article>
@@ -159,5 +223,6 @@
         </div>
       </section>
     </main>
+    <script src="../assets/js/main.js" defer></script>
   </body>
 </html>
