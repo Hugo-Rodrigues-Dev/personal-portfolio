@@ -1217,6 +1217,12 @@ h4 {
   color: rgba(200, 218, 255, 0.72);
 }
 
+.project-header__extras {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .project-breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -1675,6 +1681,18 @@ h4 {
 }
 
 @media (max-width: 640px) {
+  .project-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .project-header__extras {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
   .section {
     padding: 4.5rem 0;
   }
