@@ -107,6 +107,219 @@ const portfolioApp = (() => {
           }
         }
       },
+      projectsDetail: {
+        common: {
+          breadcrumbLabel: "Fil d'Ariane",
+          breadcrumb: {
+            home: 'Accueil',
+            projects: 'Projets'
+          },
+          headerLabel: 'Fiche projet'
+        },
+        job: {
+          titleTag: 'Job Application Tracking | Portfolio',
+          metaDescription:
+            'Fiche projet détaillée : Job Application Tracking Spreadsheet. Suivi de candidatures, organisation des relances et export Excel.',
+          breadcrumb: {
+            current: 'Job Application Tracking'
+          },
+          hero: {
+            title: 'Job Application Tracking',
+            meta: ['Gestion de candidatures', 'Front-end only'],
+            summary:
+              "Tableau de bord web pensé pour suivre mes candidatures en stage et alternance : chaque contact, chaque relance et chaque échéance reste visible d'un coup d'œil, sans dépendre d'un back-end.",
+            ctaCode: 'Code source',
+            ctaBack: 'Retour au portfolio',
+            media: "Captures d'écran en cours de préparation (vue tableau, fiche contact, export Excel)."
+          },
+          overview: {
+            title: 'Résumé du projet',
+            intro:
+              "Partant d'un Google Sheet trop peu ergonomique, j'ai construit une application réactive qui facilite le suivi des pipelines de recrutement. L'interface est optimisée pour clavier et mobile, et conserve toutes les données directement dans le navigateur.",
+            problem: {
+              title: 'Problématique',
+              body:
+                "Multiplier les candidatures signifie jongler avec des dizaines de contacts, de dates et d'actions à planifier. Les tableurs perdent vite en lisibilité et n'offrent pas de rappels proactifs."
+            },
+            solution: {
+              title: 'Solution',
+              body:
+                "Organiser les candidatures sous forme de cartes filtrables, avec des statuts explicites, des dates clés et un suivi d'activité instantané. Les données persistent grâce à <code>localStorage</code> et restent exportables en Excel."
+            },
+            result: {
+              title: 'Résultat',
+              body:
+                "Je sais en permanence où en sont mes candidatures prioritaires, quelles relances programmer et quels contacts nécessitent un suivi."
+            }
+          },
+          features: {
+            title: 'Fonctionnalités clés',
+            items: [
+              'Noyau du tracker avec filtres, recherche et métriques pour suivre les candidatures.',
+              'Persistance locale et export Excel pour garder ses données accessibles hors ligne.',
+              "Formulaire d'ajout/édition en modale, tri et pagination pour gérer de gros volumes.",
+              'Tableau de bord analytique, vue entreprises et page de prioritisation des postes.',
+              'Navigation latérale, interface bilingue et paramètres utilisateur (dont mode sombre).'
+            ],
+            stack: {
+              title: 'Stack & outils',
+              body:
+                "React 19 (hooks), Tailwind CSS, Vite et lucide-react forment la base de l'IU. Les données sont encore stockées côté client via <code>localStorage</code> en attendant la mise en place de la couche serveur planifiée."
+            }
+          },
+          next: {
+            title: 'Prochaines étapes',
+            items: [
+              'Adopter une base de données sécurisée et une authentification multi-appareils.',
+              "Mettre en place rappels/notifications, calendrier intégré et workflow d'archivage.",
+              "Concevoir une expérience mobile aboutie et une section dédiée aux CV/lettres.",
+              'Automatiser les tests/déploiements (CI/CD) et connecter les job boards pour importer les offres.',
+              "Développer des assistants IA : recherche d'opportunités, optimisation de CV, préparation d'entretiens."
+            ],
+            support: {
+              title: 'Accompagnement Codex',
+              body:
+                "Codex m'aide à cadrer cette feuille de route ambitieuse : architecture serveur, intégrations IA et pipelines automatisés sont explorés sans compromettre l'expérience utilisateur."
+            }
+          }
+        },
+        python: {
+          titleTag: 'Python Learning Repository | Portfolio',
+          metaDescription:
+            'Fiche détaillée du dépôt Python Learning Repository : progression, structures de données et algorithmes étudiés.',
+          breadcrumb: {
+            current: 'Python Learning Repository'
+          },
+          hero: {
+            title: 'Python Learning Repository',
+            meta: ['Auto-formation', 'Algorithmique & data'],
+            summary:
+              "Un dépôt vivant où je documente mon apprentissage de Python : des fondations à l'algorithmique avancée, avec scripts commentés, checklists de progression et projets inspirés de cas réels.",
+            ctaCode: 'Code source',
+            ctaBack: 'Retour au portfolio',
+            media:
+              'Diagrammes et notebooks interactifs à venir (comparaison de structures de données, benchmarks).'
+          },
+          structure: {
+            title: 'Structure du dépôt',
+            intro:
+              "Pour garder une vision claire de ma progression, chaque thème est isolé dans un dossier dédié, avec des exemples, une synthèse et des exercices. Le fichier <code>progress.md</code> sert de feuille de route globale.",
+            basics: {
+              title: 'Bases',
+              body:
+                "Syntaxe, structures de contrôle, fonctions (args/kwargs, closures, lambdas), gestion des erreurs, fichiers et tests unitaires."
+            },
+            data: {
+              title: 'Structures de données',
+              body:
+                'Listes, tuples, dictionnaires, sets, mais aussi implémentations maison : listes chaînées, piles, files, tables de hachage, tas binaires et tries.'
+            },
+            algorithms: {
+              title: 'Algorithmes',
+              body:
+                'Tri, recherche, récursion, backtracking, fenêtre glissante, deux pointeurs et premières notions de graphes en préparation de la suite.'
+            }
+          },
+          takeaways: {
+            title: "Ce que j'en retire",
+            items: [
+              "Renforcer ma pratique quotidienne du langage en l'appliquant à des problèmes concrets.",
+              'Construire des références réutilisables pour des entretiens techniques (résolution de problèmes, analyses de complexité).',
+              'Préparer des mini-projets data science et automatisation avec une base solide.'
+            ]
+          },
+          roadmap: {
+            title: 'Roadmap',
+            phase5: {
+              title: 'Phase 5 — Programmation orientée objet',
+              items: [
+                'Consolider les notions de classes, objets et relations entre composantes.',
+                'Explorer héritage, polymorphisme, encapsulation et abstraction.',
+                'Pratiquer les méthodes spéciales pour améliorer les API (`__str__`, `__repr__`, etc.).'
+              ]
+            },
+            phase6: {
+              title: 'Phase 6 — Python avancé',
+              items: [
+                'Approfondir décorateurs, générateurs et itérateurs personnalisés.',
+                'Revoir les compréhensions (listes, dictionnaires, ensembles) de manière intensive.',
+                'Introduire les approches fonctionnelles (`map`/`filter`/`reduce`) et les bibliothèques standard clés (os, sys, datetime, math...).'
+              ]
+            },
+            phase7: {
+              title: 'Phase 7 — Bits & mathématiques',
+              items: [
+                'Manipuler le binaire : opérations bitwise, masques, décalages.',
+                'Réviser les astuces mathématiques courantes (PGCD, modulo, nombres premiers).',
+                'Préparer des projets appliqués (graphes DFS/BFS, Union-Find, Dijkstra, DP knapsack/LIS/LCS) pour ancrer ces notions.'
+              ]
+            }
+          }
+        },
+        iot: {
+          titleTag: 'IoT Android App | Portfolio',
+          metaDescription:
+            'Fiche projet détaillée : IoT Android App. Visualisation temps réel des données capteurs micro:bit avec Android et UDP.',
+          breadcrumb: {
+            current: 'IoT Android App'
+          },
+          hero: {
+            title: 'IoT Android App',
+            meta: ['Android', 'IoT & capteurs'],
+            summary:
+              "Application Android réalisée à CPE Lyon pour se connecter à un serveur IoT, sélectionner un micro:bit et afficher ses capteurs en temps réel. L'utilisateur réorganise les capteurs selon ses priorités et suit les courbes directement sur son smartphone.",
+            ctaCode: 'Code source',
+            ctaBack: 'Retour au portfolio',
+            media:
+              "Aperçus des écrans de connexion, sélection d'appareil et tableau de bord seront intégrés ici."
+          },
+          architecture: {
+            title: "Architecture de l'application",
+            connection: {
+              title: 'Écran Connexion',
+              body:
+                "Saisie de l'adresse IP et du port du serveur, contrôle de la connexion et bouton pour activer le mode démo hors ligne."
+            },
+            selection: {
+              title: "Écran Sélection d'appareil",
+              body:
+                "Liste des micro:bits disponibles, informations de statut et sélection de l'appareil à monitorer."
+            },
+            dashboard: {
+              title: 'Tableau de bord principal',
+              body:
+                'Visualisation temps réel avec MPAndroidChart, cartes de capteurs réordonnables en drag & drop, envoi des préférences au serveur.'
+            }
+          },
+          features: {
+            title: 'Fonctionnalités principales',
+            items: [
+              'Connexion réseau en UDP pour recevoir les mesures avec une latence minimale.',
+              'Graphique en temps réel du capteur prioritaire, mis à jour au fur et à mesure des paquets.',
+              "Réorganisation des capteurs via RecyclerView, persistée et renvoyée au serveur pour synchroniser l'affichage.",
+              "Mode démo autonome pour tester l'application sans serveur ni micro:bit."
+            ],
+            ux: {
+              title: 'Expérience utilisateur',
+              body:
+                "UI inspirée de la charte CPE Lyon : contrastes doux, icônes explicites, feedback sur les états de connexion et transitions fluides entre les écrans."
+            }
+          },
+          next: {
+            title: 'Perspectives',
+            items: [
+              'Ajouter une sauvegarde des capteurs favoris côté client.',
+              "Notifier l'utilisateur en cas de perte de connexion ou d'intervalle de mesure anormal.",
+              'Exporter un rapport PDF avec les mesures clés sur une période donnée.'
+            ],
+            lessons: {
+              title: 'Enseignements',
+              body:
+                "Ce projet m'a permis d'appliquer les principes SOLID sur Android, de manipuler des sockets UDP et de concevoir une architecture modulaire pour capteurs connectés."
+            }
+          }
+        }
+      },
       experience: {
         eyebrow: 'Expériences',
         title: 'Parcours professionnel',
@@ -268,6 +481,218 @@ const portfolioApp = (() => {
               'Android app built at CPE Lyon to display live sensor data via UDP, select a remote server, and visualize the measurements directly from the mobile application.',
             code: 'Source',
             more: 'Learn more'
+          }
+        }
+      },
+      projectsDetail: {
+        common: {
+          breadcrumbLabel: 'Breadcrumb',
+          breadcrumb: {
+            home: 'Home',
+            projects: 'Projects'
+          },
+          headerLabel: 'Project brief'
+        },
+        job: {
+          titleTag: 'Job Application Tracking | Portfolio',
+          metaDescription:
+            'Detailed project page: Job Application Tracking Spreadsheet. Track applications, plan follow-ups, and export to Excel.',
+          breadcrumb: {
+            current: 'Job Application Tracking'
+          },
+          hero: {
+            title: 'Job Application Tracking',
+            meta: ['Application tracking', 'Front-end only'],
+            summary:
+              'Web dashboard designed to monitor my internship and apprenticeship applications: every contact, follow-up, and deadline stays visible at a glance without relying on a back end.',
+            ctaCode: 'Source',
+            ctaBack: 'Back to portfolio',
+            media: 'Screenshots in progress (board view, contact sheet, Excel export).'
+          },
+          overview: {
+            title: 'Project overview',
+            intro:
+              'Starting from a clunky Google Sheet, I built a reactive application that makes recruitment pipelines easier to manage. The interface is keyboard- and mobile-friendly, and keeps all data locally in the browser.',
+            problem: {
+              title: 'Problem',
+              body:
+                'Handling many applications means juggling dozens of contacts, dates, and planned actions. Spreadsheets quickly lose clarity and never provide proactive reminders.'
+            },
+            solution: {
+              title: 'Solution',
+              body:
+                'Organize applications as filterable cards with explicit statuses, key dates, and instant activity tracking. Data persists through <code>localStorage</code> and remains exportable to Excel.'
+            },
+            result: {
+              title: 'Outcome',
+              body:
+                'I always know the status of my priority applications, which follow-ups to schedule, and which contacts need attention.'
+            }
+          },
+          features: {
+            title: 'Key features',
+            items: [
+              'Core tracker with filters, search, and metrics to monitor applications.',
+              'Local persistence and Excel export to keep data accessible offline.',
+              'Modal add/edit form, sorting, and pagination to manage large volumes.',
+              'Analytics dashboard, company view, and job prioritization page.',
+              'Sidebar navigation, bilingual interface, and user settings (including dark mode).'
+            ],
+            stack: {
+              title: 'Stack & tools',
+              body:
+                'React 19 (hooks), Tailwind CSS, Vite, and lucide-react power the UI. Data still lives client-side via <code>localStorage</code> until the upcoming server layer is deployed.'
+            }
+          },
+          next: {
+            title: 'Next steps',
+            items: [
+              'Adopt a secure database plus multi-device authentication.',
+              'Add reminders/notifications, an integrated calendar, and an archiving workflow.',
+              'Design a polished mobile experience and a dedicated CV/cover letter space.',
+              'Automate testing/deployment (CI/CD) and connect job boards to import offers.',
+              'Build AI assistants for opportunity scouting, CV optimization, and interview prep.'
+            ],
+            support: {
+              title: 'Codex guidance',
+              body:
+                'Codex helps shape this ambitious roadmap: server architecture, AI integrations, and automated pipelines are explored without compromising user experience.'
+            }
+          }
+        },
+        python: {
+          titleTag: 'Python Learning Repository | Portfolio',
+          metaDescription:
+            'Detailed page for the Python Learning Repository: learning journey, data structures, and algorithms covered.',
+          breadcrumb: {
+            current: 'Python Learning Repository'
+          },
+          hero: {
+            title: 'Python Learning Repository',
+            meta: ['Self-learning', 'Algorithms & data'],
+            summary:
+              'A living repository documenting my Python journey: from fundamentals to advanced algorithms, with annotated scripts, progress checklists, and projects inspired by real scenarios.',
+            ctaCode: 'Source',
+            ctaBack: 'Back to portfolio',
+            media: 'Diagrams and interactive notebooks coming soon (data-structure comparisons, benchmarks).'
+          },
+          structure: {
+            title: 'Repository structure',
+            intro:
+              'To keep a clear view of my progress, each topic lives in its own folder with examples, a summary, and exercises. The <code>progress.md</code> file acts as the global roadmap.',
+            basics: {
+              title: 'Fundamentals',
+              body:
+                'Syntax, control structures, functions (args/kwargs, closures, lambdas), error handling, files, and unit tests.'
+            },
+            data: {
+              title: 'Data structures',
+              body:
+                'Lists, tuples, dictionaries, sets, and custom implementations: linked lists, stacks, queues, hash tables, heaps, and tries.'
+            },
+            algorithms: {
+              title: 'Algorithms',
+              body:
+                'Sorting, searching, recursion, backtracking, sliding window, two pointers, and early graph concepts to prepare the next steps.'
+            }
+          },
+          takeaways: {
+            title: 'What I gain',
+            items: [
+              'Strengthen my daily practice of the language by tackling concrete problems.',
+              'Build reusable references for technical interviews (problem solving, complexity analysis).',
+              'Prepare data-science and automation mini-projects on solid foundations.'
+            ]
+          },
+          roadmap: {
+            title: 'Roadmap',
+            phase5: {
+              title: 'Phase 5 — Object-oriented programming',
+              items: [
+                'Consolidate class, object, and component relationship concepts.',
+                'Explore inheritance, polymorphism, encapsulation, and abstraction.',
+                'Practice special methods to craft better APIs (`__str__`, `__repr__`, etc.).'
+              ]
+            },
+            phase6: {
+              title: 'Phase 6 — Advanced Python',
+              items: [
+                'Deepen understanding of decorators, generators, and custom iterators.',
+                'Revisit comprehensions (lists, dicts, sets) with intensive practice.',
+                'Introduce functional approaches (`map`/`filter`/`reduce`) and key standard libraries (os, sys, datetime, math...).'
+              ]
+            },
+            phase7: {
+              title: 'Phase 7 — Bits & math',
+              items: [
+                'Manipulate binary: bitwise operations, masks, shifts.',
+                'Review common math tricks (GCD, modulo, prime numbers).',
+                'Prepare applied projects (DFS/BFS graphs, Union-Find, Dijkstra, DP knapsack/LIS/LCS) to cement these ideas.'
+              ]
+            }
+          }
+        },
+        iot: {
+          titleTag: 'IoT Android App | Portfolio',
+          metaDescription:
+            'Detailed project page: IoT Android App. Real-time visualization of micro:bit sensor data with Android and UDP.',
+          breadcrumb: {
+            current: 'IoT Android App'
+          },
+          hero: {
+            title: 'IoT Android App',
+            meta: ['Android', 'IoT & sensors'],
+            summary:
+              'Android app built at CPE Lyon to connect to an IoT server, pick a micro:bit, and display its sensors in real time. Users reorder sensors by priority and follow live charts on their phone.',
+            ctaCode: 'Source',
+            ctaBack: 'Back to portfolio',
+            media:
+              'Upcoming previews of the connection, device selection, and dashboard screens.'
+          },
+          architecture: {
+            title: 'App architecture',
+            connection: {
+              title: 'Connection screen',
+              body:
+                'Enter the server IP and port, test the connection, and toggle an offline demo mode.'
+            },
+            selection: {
+              title: 'Device selection screen',
+              body:
+                'List of available micro:bits, status information, and selection of the device to monitor.'
+            },
+            dashboard: {
+              title: 'Main dashboard',
+              body:
+                'Real-time charts powered by MPAndroidChart, reorderable sensor cards via drag & drop, and preference updates sent back to the server.'
+            }
+          },
+          features: {
+            title: 'Key features',
+            items: [
+              'UDP networking to receive sensor data with minimal latency.',
+              'Real-time chart for the priority sensor, updated as packets arrive.',
+              'Sensor reordering through RecyclerView, persisted and synced with the server.',
+              'Standalone demo mode to test the app without a server or micro:bit.'
+            ],
+            ux: {
+              title: 'User experience',
+              body:
+                'UI inspired by the CPE Lyon branding: soft contrasts, clear icons, connection state feedback, and smooth screen transitions.'
+            }
+          },
+          next: {
+            title: 'Next steps',
+            items: [
+              'Store favourite sensors locally on the client.',
+              'Notify the user if the connection drops or measurement intervals drift.',
+              'Export a PDF report summarizing key metrics over a selected period.'
+            ],
+            lessons: {
+              title: 'Lessons learned',
+              body:
+                'This project let me apply SOLID principles on Android, work with UDP sockets, and design a modular architecture for connected sensors.'
+            }
           }
         }
       },
